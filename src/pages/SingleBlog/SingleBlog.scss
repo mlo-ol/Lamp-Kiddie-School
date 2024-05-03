@@ -1,0 +1,82 @@
+@import '../../sass/colors.scss';
+
+.single-blog {
+    padding-top: 150px;
+}
+
+.single-blog-area {
+    background: $color-white;
+    padding: 50px 25px;
+    border-radius: 12px;
+
+    .single-blog-category {
+        font-size: 12px;
+        font-weight: 600;
+        color: $color-blue;
+        margin-bottom: 10px;
+    }
+
+    .single-blog-title {
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .single-blog-banner {
+        margin-bottom: 30px;
+    }
+
+    .single-blog-text {
+        margin-bottom: 20px;
+    }
+
+    .single-post-quote {
+        background: #583fbc1f;
+        padding: 15px;
+        border-left: 2px solid $color-blue;
+    }
+}
+
+.blog-sidebar {
+    background: $color-white;
+    padding: 50px 15px;
+    border-radius: 12px;
+
+    .sidebar-heading {
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .sidebar-category {
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                list-style: none;
+                border-bottom: 1px dashed #583fbc1f;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+
+                a {
+                    text-decoration: none;
+                    color: $color-blue;
+
+                    &:hover {
+                        color: $color-black;
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: unset;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px){
+    .single-blog-area {
+        margin-bottom: 20px;
+    }
+}

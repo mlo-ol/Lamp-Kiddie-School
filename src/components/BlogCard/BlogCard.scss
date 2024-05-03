@@ -1,0 +1,62 @@
+@import './../../sass//colors.scss';
+
+.blog-card {
+    border: 1px solid #dddddd;
+    padding: 25px;
+    border-radius: 32px;
+    margin-bottom: 20px;
+
+    .blog-img { 
+        position: relative;
+        margin-bottom: 20px;
+
+        .date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: $color-white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 15px;
+
+            h6 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 0px;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    span {
+        a {
+            color: $color-blue;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    }
+
+    h3 {
+        a {
+            text-decoration: none;
+            color: $color-black;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
