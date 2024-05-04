@@ -5,6 +5,11 @@ import About from './pages/About';
 import BlogsPage from './pages/BlogsPage';
 import SingleBlog from './pages/SingleBlog/SingleBlog';
 import Testimonials from './pages/Testimonials/Testimonials';
+import Admin from './pages/AdminPages/Admin';
+import AdminGallery from './pages/AdminPages/AdminGallery';
+import AdminBlogs from './pages/AdminPages/AdminBlogs';
+import AdminTestimonials from './pages/AdminPages/AdminTestimonials';
+
 import Login from './pages/Login/Login';
 
 
@@ -17,7 +22,11 @@ function App() {
       <Route path="/blogs" element={<BlogsPage />} />
       <Route path="/blog/:url" element={<SingleBlog />} />
       <Route path="/login" element={<Login />} />
-
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/admin-gallery" element={<AdminGallery />} />
+      <Route path="/admin-blogs" element={<AdminBlogs />} />
+      <Route path="/admin-testimonials" element={<AdminTestimonials />} />
+      
     </Routes>
   );
 }
