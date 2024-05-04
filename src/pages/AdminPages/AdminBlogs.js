@@ -1,4 +1,3 @@
-// AdminBlogs.js
 import React, { useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './AdminBlogs.scss';
@@ -30,7 +29,6 @@ const AdminBlogs = () => {
     };
 
     const handleSaveButtonClick = () => {
-        // Add your logic here to save the edited or new blog
         if (editBlogIndex !== null) {
             const updatedBlogs = [...blogs];
             updatedBlogs[editBlogIndex] = newBlog;
@@ -41,14 +39,14 @@ const AdminBlogs = () => {
         setShowCreateForm(false);
         setShowEditForm(false);
         setEditBlogIndex(null);
-        setNewBlog({ title: '', description: '', image: null }); // Reset the newBlog state
+        setNewBlog({ title: '', description: '', image: null });
     };
 
     const handleCancelButtonClick = () => {
         setShowCreateForm(false);
         setShowEditForm(false);
         setEditBlogIndex(null);
-        setNewBlog({ title: '', description: '', image: null }); // Reset the newBlog state
+        setNewBlog({ title: '', description: '', image: null }); 
     };
 
     const handleInputChange = (e) => {

@@ -1,90 +1,104 @@
 import React, { useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
 import './AdminTestimonials.scss';
-import imgOne from '../../assets/servicePage/gallery/1.png';
-import imgTwo from '../../assets/servicePage/gallery/2.png';
-import imgThree from '../../assets/servicePage/gallery/3.png';
-import imgFour from '../../assets/servicePage/gallery/4.png';
-import imgFive from '../../assets/servicePage/gallery/5.png';
-import imgSix from '../../assets/servicePage/gallery/6.png';
+import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
 
 const AdminTestimonials = () => {
-    const [galleryImages, setGalleryImages] = useState([
-        imgOne, imgTwo
+    const [pendingTestimonials, setPendingTestimonials] = useState([
+        { id: 1, name: 'John Doe', type: 'Alumni', email: 'john@example.com', contact: '1234567890', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', approved: false },
+        { id: 2, name: 'Jane Smith', type: 'Parent', email: 'jane@example.com', contact: '9876543210', message: 'Nulla facilisi. Vivamus lacinia arcu vitae ex rutrum, vel accumsan ligula elementum.', approved: false },
+        { id: 3, name: 'Alice Johnson', type: 'Alumni', email: 'alice@example.com', contact: '5678901234', message: 'Fusce pharetra, urna nec fringilla lobortis, magna arcu efficitur magna, id facilisis mauris magna eu risus.', approved: false },
     ]);
 
-    const handleImageUpload = (e, index) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const updatedImages = [...galleryImages];
-                updatedImages[index] = reader.result;
-                setGalleryImages(updatedImages);
-            };
-            reader.readAsDataURL(file);
-        }
+    const [approvedTestimonials, setApprovedTestimonials] = useState([]);
+
+    const handleApprove = (id) => {
+        const selectedTestimonial = pendingTestimonials.find(testimonial => testimonial.id === id);
+        setApprovedTestimonials([...approvedTestimonials, selectedTestimonial]);
+        setPendingTestimonials(pendingTestimonials.filter(testimonial => testimonial.id !== id));
     };
 
-    const deleteImage = (index) => {
-        const updatedImages = [...galleryImages];
-        updatedImages.splice(index, 1);
-        setGalleryImages(updatedImages);
+    const handleRemovePending = (id) => {
+        const filteredTestimonials = pendingTestimonials.filter(testimonial => testimonial.id !== id);
+        setPendingTestimonials(filteredTestimonials);
+    };
+
+    const handleRemoveApproved = (id) => {
+        const filteredTestimonials = approvedTestimonials.filter(testimonial => testimonial.id !== id);
+        setApprovedTestimonials(filteredTestimonials);
     };
 
     return (
         <>
             <AdminNavbar />
-            
-            <div className="admin">
-                <div className="admin-header">
-                    <SectionTitle
-                        subTitle="Admin Gallery"
-                        title="Manage Gallery Images"
-                        description="You can add, replace, or delete images from the gallery."
-                    />
-                    <div className="upload-container">
-                        <label htmlFor="file-upload" className="upload-button">Upload Image</label>
-                        <input
-                            id="file-upload"
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => handleImageUpload(e, galleryImages.length)}
-                            style={{ display: 'none' }}
-                        />
-                    </div>
+            <div className="admin-testimonials">
+                <SectionTitle
+                    subTitle="Admin Testimonials"
+                    title="Manage Testimonials"
+                    description="You can approve or remove testimonials."
+                />
+                <div className="testimonials-table">
+                    <h2>Pending Testimonials</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Email Address</th>
+                                <th>Contact Number</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pendingTestimonials.map(testimonial => (
+                                <tr key={testimonial.id}>
+                                    <td>{testimonial.id}</td>
+                                    <td>{testimonial.name}</td>
+                                    <td>{testimonial.type}</td>
+                                    <td>{testimonial.email}</td>
+                                    <td>{testimonial.contact}</td>
+                                    <td>{testimonial.message}</td>
+                                    <td>
+                                        <button className="approve-button" onClick={() => handleApprove(testimonial.id)}>Approve</button>
+                                        <button className="remove-button" onClick={() => handleRemovePending(testimonial.id)}>Remove</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
-                <div className="gallery-container">
-                    {galleryImages.map((image, index) => (
-                        <div key={index} className="gallery-item">
-                            <img src={image} alt={`gallery${index}`} />
-                            <div className="button-container">
-                                <input
-                                    id={`replace-upload-${index}`}
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => handleImageUpload(e, index)}
-                                    style={{ display: 'none' }}
-                                />
-                                <label htmlFor={`replace-upload-${index}`} className="replace-button">Replace</label>
-                                <button onClick={() => deleteImage(index)}>Delete</button>
-                            </div>
-                        </div>
-                    ))}
-                    {/* Placeholder elements for remaining slots */}
-                    {Array.from({ length: 6 - galleryImages.length }).map((_, index) => (
-                        <label key={index} htmlFor={`replace-upload-${index}`} className="gallery-item placeholder">
-                            <span>Add Image</span>
-                            <input
-                                id={`replace-upload-${index}`}
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => handleImageUpload(e, galleryImages.length + index)}
-                                style={{ display: 'none' }}
-                            />
-                        </label>
-                    ))}
+                <div className="testimonials-table">
+                    <h2>Approved Testimonials</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Email Address</th>
+                                <th>Contact Number</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {approvedTestimonials.map(testimonial => (
+                                <tr key={testimonial.id}>
+                                    <td>{testimonial.id}</td>
+                                    <td>{testimonial.name}</td>
+                                    <td>{testimonial.type}</td>
+                                    <td>{testimonial.email}</td>
+                                    <td>{testimonial.contact}</td>
+                                    <td>{testimonial.message}</td>
+                                    <td>
+                                        <button className="remove-button" onClick={() => handleRemoveApproved(testimonial.id)}>Remove</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>
