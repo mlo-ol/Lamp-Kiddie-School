@@ -9,7 +9,7 @@ const Login = () => {
     const handleLogin = () => {
         if (username === 'admin' && password === '1') {
             // Successful login logic, redirect to the about page
-            window.location.href = '/about';
+            window.location.href = '/admin';
         } else {
             setErrorMessage('Invalid username or password');
         }
