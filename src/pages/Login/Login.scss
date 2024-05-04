@@ -16,7 +16,7 @@
 }
 .login-container {
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 561px;
@@ -33,6 +33,7 @@
 
 .login-container h2 {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .form-group {
@@ -58,16 +59,17 @@
 }
 
 button {
-    width: 100%;
+    width: 50%;
     padding: 10px;
-    background-color: $color-blue;
-    color: #fff;
+    background-color: #A4BF86;
+    color: #000;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #48700C;
+    color: #fff;
 }
