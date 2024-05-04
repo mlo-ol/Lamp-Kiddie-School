@@ -5,6 +5,8 @@ import About from './pages/About';
 import BlogsPage from './pages/BlogsPage';
 import SingleBlog from './pages/SingleBlog/SingleBlog';
 import Testimonials from './pages/Testimonials';
+import Login from './pages/Login/Login';
+
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Route path="/testimonials" element={<Testimonials />} />
       <Route path="/blogs" element={<BlogsPage />} />
       <Route path="/blog/:url" element={<SingleBlog />} />
+      <Route path="/login" element={<Login />} />
+
     </Routes>
   );
 }

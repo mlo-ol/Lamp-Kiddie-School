@@ -3,6 +3,7 @@ import './Navbar.scss';
 import logo from './../../assets/logo.png';
 import {Link} from 'react-router-dom';
 
+
 const Navbar = () => {
 
     const navbarItems = [
@@ -50,7 +51,7 @@ const Navbar = () => {
                             
                             {/* Navbar Button */}
                             <div className="theme-btn">
-                                <Link to="#">Login as Admin</Link>
+                                <Link to="/login">Login as Admin</Link>
                             </div>
                         </div>
                     </div>
