@@ -15,16 +15,12 @@ const Navbar = () => {
             path: '/about',
         },
         {
-            name: 'Single Service',
-            path: '/singleservice',
+            name: 'Testimonials',
+            path: '/testimonials',
         },
         {
             name: 'Blogs',
             path: '/blogs',
-        },
-        {
-            name: 'Contact Us',
-            path: '/contact',
         }
     ];
 
@@ -54,7 +50,7 @@ const Navbar = () => {
                             
                             {/* Navbar Button */}
                             <div className="theme-btn">
-                                <Link to="/contact">Book appointment</Link>
+                                <Link to="#">Login as Admin</Link>
                             </div>
                         </div>
                     </div>

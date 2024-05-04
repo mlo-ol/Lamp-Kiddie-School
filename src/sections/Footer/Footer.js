@@ -11,24 +11,20 @@ const Footer = () => {
 
     const footerMenu = [
         {
-            'name' : 'About Us',
-            'link' : '/'
+            name: 'Home',
+            path: '/',
         },
         {
-            'name' : 'Dental Services',
-            'link' : '/'
+            name: 'About Us',
+            path: '/about',
         },
         {
-            'name' : 'Dentist',
-            'link' : '/'
+            name: 'Testimonials',
+            path: '/testimonials',
         },
         {
-            'name' : 'Blogs',
-            'link' : '/'
-        },
-        {
-            'name' : 'FAQs',
-            'link' : '/'
+            name: 'Blogs',
+            path: '/blogs',
         }
     ];
 
@@ -98,18 +94,6 @@ const Footer = () => {
                             }
                         </div>
                     </div>
-                </div>
-
-                <div className="copyright-area">
-                    <div className='copy-text'>
-                        <p>&copy; Dentalist. All Right Reserved</p>
-                    </div>  
-                    <div className='copy-links'>
-                        <ul>
-                            <li><Link to='/'>Terms of Use</Link></li>
-                            <li><Link to='/'>Privacy Policy</Link></li>
-                        </ul>
-                    </div>                          
                 </div>
             </div>
         </footer>
