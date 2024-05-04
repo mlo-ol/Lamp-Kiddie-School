@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import About from './pages/About';
 import BlogsPage from './pages/BlogsPage';
 import SingleBlog from './pages/SingleBlog/SingleBlog';
-import Testimonials from './pages/Testimonials';
+import Testimonials from './pages/Testimonials/Testimonials';
 import Login from './pages/Login/Login';
 
 

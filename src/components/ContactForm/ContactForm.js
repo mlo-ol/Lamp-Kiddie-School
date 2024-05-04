@@ -14,41 +14,35 @@ const ContactForm = () => {
                 </div>
                 <div className="col-lg-6">
                     <div class="form-group">
+                        <label>I am a/an</label>
+                        <select class="form-control">
+                            <option>Alumni</option>
+                            <option>Parent</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div class="form-group">
                         <label>E-mail Address</label>
                         <input type="email" class="form-control" placeholder="Enter email address..." />
                     </div>
                 </div>
                 <div className="col-lg-6">
                     <div class="form-group">
-                        <label>Service</label>
-                        <select class="form-control">
-                            <option>Teeth Whitening</option>
-                            <option>Teeth Whitening</option>
-                            <option>Teeth Whitening</option>
-                            <option>Teeth Whitening</option>
-                        </select>
+                        <label>Contact Number</label>
+                        <input type="email" class="form-control" placeholder="Enter phone number..." />
                     </div>
                 </div>
-                <div className="col-lg-6">
-                    <div class="form-group">
-                        <label>Department</label>
-                        <select class="form-control">
-                            <option>Select Department</option>
-                            <option>Select Department</option>
-                            <option>Select Department</option>
-                            <option>Select Department</option>
-                        </select>
-                    </div>
-                </div>
+                
                 <div className="col-lg-12">
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Messages</label>
-                        <textarea class="form-control" placeholder='Enter your messages...' rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" placeholder='Enter your story...' rows="3"></textarea>
                     </div>
                 </div>
 
                 <div className="col-lg-6">
-                    <button type="submit" class="btn appointment-btn">Book an appointment</button>
+                    <button type="submit" class="btn appointment-btn">Submit</button>
                 </div>
                 <div className="col-lg-6">
                     <div className="appointment-call">
