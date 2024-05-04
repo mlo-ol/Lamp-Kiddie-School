@@ -1,7 +1,18 @@
 .safty-section {
+    height: 1310px;
+    // .history{
+
+    // }
     .section-title {
+        background-image: url("~/src/assets/about/vision-mission/vision-mission.png");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        max-width: 800px;
+        padding: 3%;
+        height: 400px;
         text-align: center;
-        max-width: 600px;
+        // max-width: 600px;
         margin: 0 auto 50px;
 
         h2 {

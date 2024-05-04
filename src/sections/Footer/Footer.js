@@ -15,7 +15,7 @@ const Footer = () => {
             path: '/',
         },
         {
-            name: 'About Us',
+            name: 'About',
             path: '/about',
         },
         {
@@ -23,25 +23,33 @@ const Footer = () => {
             path: '/testimonials',
         },
         {
+            name: 'Gallery',
+            path: '/gallery',
+        },
+        {
             name: 'Blogs',
             path: '/blogs',
+        },
+        {
+            name: 'Donations',
+            path: '/donations',
         }
     ];
 
     const footerContacts = [
         {
             'title': 'Phone Number',
-            'info': '+088 123 654 987',
+            'info': '+63 9123456789',
             'icon': call
         },
         {
-            'title': 'Open Hour',
-            'info': '09:00 AM - 18:00 PM',
+            'title': 'For interest in donating:',
+            'info': 'sample@email.com',
             'icon': time
         },
         {
-            'title': 'Clinic Address',
-            'info': '35 West Dental Street California 1004',
+            'title': 'Address',
+            'info': 'Calatrava, Romblon, Philippines',
             'icon': location
         }
     ]
@@ -54,12 +62,12 @@ const Footer = () => {
                         <div className="footer-logo">
                             <img src={logo} alt="logo" />
                         </div>
-                        <p>Dental Care Seattle is a top-rated local practice for cosmetic, preventative, and restorative dentistry on First Hill</p>
+                        <p>A mission, non-profit, non-sectarian early childhood educational institution committed to train and develop children spiritually, mentally, physically and socially for God's glory.</p>
 
                         <div className="social-logo">
                             <p>Follow us on</p>
                             <ul>
-                                <li><a href="/"><FaFacebookF/></a></li>
+                                <li><a href="/https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF/></a></li>
                                 <li><a href="/"><FaTwitter/></a></li>
                                 <li><a href="/"><FaInstagram/></a></li>
                             </ul>

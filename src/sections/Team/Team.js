@@ -5,6 +5,7 @@ import imgOne from '../../assets/about/team/1.png';
 import imgTwo from '../../assets/about/team/2.png';
 import imgThree from '../../assets/about/team/3.png';
 import imgFour from '../../assets/about/team/4.png';
+import team from '../../assets/about/vision-mission/container3.png';
 
 const Team = () => {
 
@@ -24,19 +25,41 @@ const Team = () => {
         {
             'img': imgFour,
             'name': 'Jenny Wilson'
+        },
+        {
+            'img': imgOne,
+            'name': 'Dianne Russell'
+        },
+        {
+            'img': imgTwo,
+            'name': 'Esther Howard'
+        },
+        {
+            'img': imgThree,
+            'name': 'Darrell Steward'
+        },
+        {
+            'img': imgFour,
+            'name': 'Jenny Wilson'
         }
     ]
 
+    const teamsStyle = {
+        backgroundImage: `url(${team})`, // Use multiple backgrounds
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%',
+        backgroundPosition: 'center',
+    };
 
     return (
-        <section className='team-section pt-100' data-aos="fade-up" data-aos-duration="2000">
-            <div className="container">
+        <section className='team-section pt-100 pb-70' style={teamsStyle}>
+            <div className="container" data-aos="fade-up" data-aos-duration="2000">
                 <div className="row">
                     <div className="col-lg-7">
                         <SectionTitle 
-                            subTitle="Meet our Team"
-                            title="Get to know the dentalist
-                            dental Team"
+                            subTitle="Meet the Teachers"
+                            title="Get to know the Lamp 
+                            Kiddie School Faculty"
                         />
                     </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import AboutBanner from '../sections/AboutBanner/AboutBanner';
-import Faq from '../sections/Faq/Faq';
+// import Faq from '../sections/Faq/Faq';
 import Priority from '../sections/Priority/Priority';
 import Safety from '../sections/Safety/Safety';
 import Team from '../sections/Team/Team';
@@ -11,11 +11,11 @@ const About = () => {
     return (
         <>
             <Navbar />
-            <AboutBanner />
             <Priority />
-            <Safety />
-            <Team />
-            <Faq />
+            <AboutBanner />
+                <Safety />
+                <Team />
+            {/* <Faq /> */}
             <Footer />
         </>
     );

@@ -1,33 +1,42 @@
 @import '../../sass/colors.scss';
 
 .priority-section {
-    padding-bottom: 150px;
+    background-image: url("~/src/assets/login/admin-log-in.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
     
-    .priority-img {
-        text-align: right;
-        margin-right: 60px;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 30px;
+    // .priority-img {
+    //     text-align: right;
+    //     margin-right: 60px;
+    //     position: relative;
+    //     z-index: 1;
+    //     margin-bottom: 30px;
 
-        &::before {
-            position: absolute;
-            content: "";
-            width: 45%;
-            height: 65%;
-            top: -12%;
-            left: 30%;
-            background: #DBEFFA;
-            z-index: -1;
-            border-radius: 20px;
-        }
-    }
+    //     &::before {
+    //         position: absolute;
+    //         content: "";
+    //         width: 45%;
+    //         height: 65%;
+    //         top: -12%;
+    //         left: 30%;
+    //         background: #DBEFFA;
+    //         z-index: -1;
+    //         border-radius: 20px;
+    //     }
+    // }
 
     .priority-text {
-        max-width: 700px;
+        background-color: white;
+        max-width: 600px;
+        height: 210px;
+        margin-top: 370px;
         margin-bottom: 30px;
 
         .section-title {
+            padding-top: 30px;
+            padding-left: 35px;
             margin-bottom: 30px;
 
             h2 {

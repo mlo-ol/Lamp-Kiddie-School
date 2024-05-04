@@ -12,7 +12,7 @@ const Navbar = () => {
             path: '/',
         },
         {
-            name: 'About Us',
+            name: 'About',
             path: '/about',
         },
         {
@@ -20,8 +20,16 @@ const Navbar = () => {
             path: '/testimonials',
         },
         {
+            name: 'Gallery',
+            path: '/gallery',
+        },
+        {
             name: 'Blogs',
             path: '/blogs',
+        },
+        {
+            name: 'Donations',
+            path: '/donations',
         }
     ];
 
@@ -51,7 +59,7 @@ const Navbar = () => {
                             
                             {/* Navbar Button */}
                             <div className="theme-btn">
-                                <Link to="/login">Login as Admin</Link>
+                                <Link to="/login">Login</Link>
                             </div>
                         </div>
                     </div>

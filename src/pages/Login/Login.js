@@ -16,8 +16,8 @@ const Login = () => {
     };
 
     return (
-        <div className="login">
-        <div className="login-container">
+        <div className="login" data-aos="fade" data-aos-duration="1000">
+        <div className="login-container" data-aos="fade-up" data-aos-duration="1000">
             <h2>Login</h2>
             <form>
                 <div className="form-group">

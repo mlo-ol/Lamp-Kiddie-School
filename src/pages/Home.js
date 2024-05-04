@@ -8,7 +8,7 @@ import Expert from '../sections/Expert/Expert';
 import Features from '../sections/Features/Features';
 import Footer from '../sections/Footer/Footer';
 import Services from '../sections/Services/Services';
-import Testimonial from '../sections/Testimonial/Testimonial';
+import Testimonial from '../sections/AlumnusTestimonial/Testimonial';
 
 const Home = () => {
 

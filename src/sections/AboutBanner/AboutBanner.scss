@@ -1,15 +1,24 @@
 .about-section {
-    height: 750px;
+    margin-top: 0px;
+    height: 1250px;
     
     .about-banner-text {
+        background-image: url("~/src/assets/about/vision-mission/vision-mission.png");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        padding: 10%;
+        max-width: 100%;
+        height: 260px;
         h2 {
-            font-size: 60px;
+            margin-top: -6%;
+            font-size: 55px;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         p {
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
     }
 
