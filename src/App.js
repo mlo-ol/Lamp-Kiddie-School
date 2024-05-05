@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import {Routes, Route} from 'react-router-dom';
 import About from './pages/About';
 import BlogsPage from './pages/BlogsPage';
+import Gallery from './pages/Gallery';
 import SingleBlog from './pages/SingleBlog/SingleBlog';
 import Testimonials from './pages/Testimonials/Testimonials';
 import Admin from './pages/AdminPages/Admin';
@@ -21,6 +22,7 @@ function App() {
       <Route path="/testimonials" element={<Testimonials />} />
       <Route path="/blogs" element={<BlogsPage />} />
       <Route path="/blog/:url" element={<SingleBlog />} />
+      <Route path="/gallery" element={<Gallery/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/admin-gallery" element={<AdminGallery />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../sections/Footer/Footer';
-import Gallery from '../../sections/Gallery/Gallery';
+// import Gallery from '../../sections/Gallery/Gallery';
 import AlumnusTestimonial from '../../sections/AlumnusTestimonial/Testimonial';
 import ParentsTestimonial from '../../sections/ParentsTestimonial/Testimonial';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
@@ -14,8 +14,8 @@ const Testimonials = () => {
     return (
         <>
             <Navbar />
-            <Gallery />
-            <div className='testimonial' >
+            {/* <Gallery /> */}
+            <div className='testimonial'>
             <AlumnusTestimonial/>
             <ParentsTestimonial/>
             <section className='contact-section' data-aos="fade-up" data-aos-duration="2000">

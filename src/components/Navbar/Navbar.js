@@ -19,10 +19,10 @@ const Navbar = () => {
             name: 'Testimonials',
             path: '/testimonials',
         },
-        // {
-        //     name: 'Gallery',
-        //     path: '/gallery',
-        // },
+        {
+            name: 'Gallery',
+            path: '/gallery',
+        },
         {
             name: 'Blogs',
             path: '/blogs',

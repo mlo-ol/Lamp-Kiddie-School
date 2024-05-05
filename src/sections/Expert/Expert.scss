@@ -34,15 +34,24 @@
 
 .expert-img {
         text-align: left;
-        margin-right: 60px;
+        margin-right: 120px;
         position: relative;
         z-index: 1;
         margin-bottom: 30px;
 
+        img {
+            object-fit: cover;
+            border-radius: 30px;
+            width: 450px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
         &::before {
             position: absolute;
             content: "";
-            width: 45%;
+            width: 70%;
             height: 125%;
             top: -12%;
             right: 0%;

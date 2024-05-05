@@ -1,12 +1,12 @@
 import React from 'react';
 import './Gallery.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import imgOne from '../../assets/servicePage/gallery/1.png';
-import imgTwo from '../../assets/servicePage/gallery/2.png';
-import imgThree from '../../assets/servicePage/gallery/3.png';
-import imgFour from '../../assets/servicePage/gallery/4.png';
-import imgFive from '../../assets/servicePage/gallery/5.png';
-import imgSix from '../../assets/servicePage/gallery/6.png';
+import imgOne from '../../assets/lks/13.jpg';
+import imgTwo from '../../assets/lks/14.jpg';
+import imgThree from '../../assets/lks/15.jpg';
+import imgFour from '../../assets/lks/16.jpg';
+import imgFive from '../../assets/lks/17.jpg';
+import imgSix from '../../assets/lks/18.jpg';
 
 const Gallery = () => {
     return (
@@ -14,7 +14,7 @@ const Gallery = () => {
             <div className="container">
                 <SectionTitle 
                     subTitle="Gallery"
-                    title="Some proof about our services for you"
+                    title="Capturing Moments & Inspiring Minds of Lamp Kiddie School"
                     description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
                 />
                 <div className="row">
