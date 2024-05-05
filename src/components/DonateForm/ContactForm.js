@@ -14,10 +14,11 @@ const ContactForm = () => {
                 </div>
                 <div className="col-lg-6">
                     <div class="form-group">
-                        <label>I am a/an</label>
+                        <label>Type of Donation</label>
                         <select class="form-control">
-                            <option>Alumni</option>
-                            <option>Parent</option>
+                            <option>Money</option>
+                            <option>Necessities</option>
+                            <option>Foods</option>
                         </select>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ const ContactForm = () => {
                 <div className="col-lg-12">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Your Message</label>
-                        <textarea class="form-control" placeholder='Enter your story' rows="3"></textarea>
+                        <textarea class="form-control" placeholder='Enter' rows="3"></textarea>
                     </div>
                 </div>
 

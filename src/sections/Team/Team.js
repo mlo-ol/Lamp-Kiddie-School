@@ -1,10 +1,12 @@
 import React from 'react';
 import './Team.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import imgOne from '../../assets/about/team/1.png';
-import imgTwo from '../../assets/about/team/2.png';
-import imgThree from '../../assets/about/team/3.png';
-import imgFour from '../../assets/about/team/4.png';
+import imgOne from '../../assets/lks/Faculty/Director Gloria F. Gaa.png';
+import imgTwo from '../../assets/lks/Faculty/Teacher Delia F. Fajutagana.png';
+import imgThree from '../../assets/lks/Faculty/Teacher Geraldine M. De la Cruz.png';
+import imgFour from '../../assets/lks/Faculty/Teacher Judy Ann M. Mariano.png';
+import imgFive from '../../assets/lks/Faculty/Teacher Maricel M. Falcutila.png';
+import imgSix from '../../assets/lks/Faculty/Teacher Ria Ann M. Falsado.png';
 import team from '../../assets/about/vision-mission/container3.png';
 
 const Team = () => {
@@ -12,35 +14,27 @@ const Team = () => {
     const teams = [
         {
             'img': imgOne,
-            'name': 'Dianne Russell'
+            'name': 'Director Gloria F. Gaa'
         },
         {
             'img': imgTwo,
-            'name': 'Esther Howard'
+            'name': 'Teacher Delia F. Fajutagana'
         },
         {
             'img': imgThree,
-            'name': 'Darrell Steward'
+            'name': 'Teacher Geraldine M. De la Cruz'
         },
         {
             'img': imgFour,
-            'name': 'Jenny Wilson'
+            'name': 'Teacher Judy Ann M. Mariano.png'
         },
         {
-            'img': imgOne,
-            'name': 'Dianne Russell'
+            'img': imgFive,
+            'name': 'Teacher Maricel M. Falcutila'
         },
         {
-            'img': imgTwo,
-            'name': 'Esther Howard'
-        },
-        {
-            'img': imgThree,
-            'name': 'Darrell Steward'
-        },
-        {
-            'img': imgFour,
-            'name': 'Jenny Wilson'
+            'img': imgSix,
+            'name': 'Teacher Ria Ann M. Falsado'
         }
     ]
 

@@ -1,8 +1,18 @@
 @import '../../sass/colors.scss';
 
 .banner-section {
+    background-image: url("~/src/assets/lks/1.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    // padding: 10%;
+    // max-width: 100%;
+    // height: 260px;
+    border-radius: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
     height: 800px;
-    margin-top: 100px;
+    margin-top: 135px;
     position: relative;
     z-index: 1;
 
@@ -17,13 +27,23 @@
 }
 
 .banner-text {
+    background-image: url("~/src/assets/home/title.png");
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-left: 18%;
+    padding-right: 16%;
+    padding-top: 19%;
+    max-width: 100%;
+    height: 500px;
+
     h1 {
-        font-size: 64px;
+        font-size: 54px;
         font-weight: 700;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     .banner-bottom {
-        margin-top: 60px;
+        margin-top: 30px;
         display: flex;
 
         .theme-btn {
@@ -296,11 +316,20 @@
         
     }
     .banner-text {
+        background-image: url("~/src/assets/home/title.png");
+        background-size: 100%;
+        background-position: top;
+        background-repeat: no-repeat;
+        padding-left: 13%;
+        padding-right: 16%;
+        padding-top: 19%;
+        max-width: 50%;
+        height: 500px;
         text-align: center;
         padding-top: 30px;
         
         h1 {
-            font-size: 40px;
+            font-size: 20px;
             margin-bottom: 15px;
         }
 

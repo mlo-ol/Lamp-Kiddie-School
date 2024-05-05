@@ -1,7 +1,7 @@
 @import '../../sass/colors.scss';
 
 .appointment-section {
-    padding-top: 50px;
+    padding-top: 30px;
 
     .section-title {
         margin-bottom: 30px;
@@ -42,6 +42,7 @@
             }
 
             p {
+                font-size: small;
                 margin-left: 20px;
                 margin-bottom: 0;
                 font-weight: 600;

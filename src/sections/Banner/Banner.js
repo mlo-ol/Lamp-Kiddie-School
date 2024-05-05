@@ -13,7 +13,7 @@ import shapeFour from '../../assets/banner/pattern.png';
 const Banner = () => {
 
     return (
-        <section className='section-bg section-common banner-section'>
+        <section className='banner-section'>
             <div className="d-table">
                 <div className="d-table-cell">
                     <div className="container">

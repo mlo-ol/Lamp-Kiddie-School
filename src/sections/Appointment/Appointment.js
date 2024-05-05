@@ -7,7 +7,7 @@ import ContactForm from '../../components/DonateForm/ContactForm';
 const Appointment = () => {
 
     // this should be the location of lamp kiddie school
-    const mapLink = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.72810807265!2d-0.24168024584704212!3d51.52877184047419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f131!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sbd!4v1666254073802!5m2!1sen!2sbd'
+    const mapLink = 'https://www.google.com/maps/embed/v1/place?q=Lamp+Kiddie+School+(Calatrava,+Pob.),+M+Roxas+St,+Poblacion,+Calatrava,+Romblon,+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
 
     return (
         <section className='appointment-section pb-70' data-aos="fade-up" data-aos-duration="2000">
@@ -19,7 +19,7 @@ const Appointment = () => {
 
                             <div className="location-name">
                                 <AiFillHome />
-                                <p>Lamp Kiddie School, Calatrava, Romblon, Philippines</p>
+                                <p>Lamp Kiddie School (Calatrava, Pob.), M Roxas St, Poblacion, Calatrava, Romblon, Philippines</p>
                             </div>
                         </div>
                     </div>

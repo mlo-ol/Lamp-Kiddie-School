@@ -17,10 +17,11 @@ p {
 h1, h2, h3, h4, h5, h6 {
     color: $color-black;
     margin-bottom: 0;
+    font-family: $title-font;
 }
 .theme-btn {
     a {
-        background: $color-blue;
+        background: $color-rose;
         color: $color-white;
         padding: 14px 20px;
         text-decoration: none;
@@ -34,8 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 
         &:hover {
             background: $color-white;
-            color: $color-blue;
-            border: 1px solid $color-blue;
+            color: $color-rose;
+            border: 1px solid $color-rose;
         }
     }
 }
