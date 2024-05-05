@@ -13,19 +13,21 @@ import './Testimonials.scss';
 const Testimonials = () => {
     return (
         <>
+            <Navbar />
             <Gallery />
+            <div className='testimonial' >
             <AlumnusTestimonial/>
             <ParentsTestimonial/>
-            <section className='section-bg section-common contact-section'>
-                <Navbar />
+            <section className='contact-section' data-aos="fade-up" data-aos-duration="2000">
                 <SectionTitle 
                     title="Submit Your Testimonial"
                     description="Its your time to share your experience!"
                 />
-            <section className='contact-form-area' data-aos="fade-up" data-aos-duration="2000">
+            <section className='contact-form-area'>
                 <ContactForm />
             </section>
             </section>
+            </div>
             {/* <Symptoms /> */}
             {/* <Appointment /> */}
             <Footer />

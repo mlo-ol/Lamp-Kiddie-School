@@ -12,29 +12,47 @@ const Testimonial = () => {
 
     const testimonails = [
         {
-            'img': imgOne,
+            // 'img': imgOne,
             'name': 'Robert Fox',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            'img': imgTwo,
+            // 'img': imgTwo,
             'name': 'Albert Flores',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            'img': imgThree,
+            // 'img': imgThree,
             'name': 'Bessie Cooper',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            'img': imgOne,
-            'name': 'Bessie Cooper',
+            // 'img': imgOne,
+            'name': 'Kuromi',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        }
+        },
+        {
+            // 'img': imgOne,
+            'name': 'Cinnamoroll',
+            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+        },
+        {
+            // 'img': imgTwo,
+            'name': 'Hello Kitty',
+            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+        },
+        {
+            // 'img': imgThree,
+            'name': 'Keroppi',
+            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+        },
     ]
 
     // slider
@@ -80,7 +98,7 @@ const Testimonial = () => {
                         />
                     </div>
                     <div className="col-lg-6">
-                        <p className="pt-5">Sharing the Experience</p>
+                        <p className="pt-5">"Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.” ~Luke 6:38</p>
                     </div>
                 </div>
 
