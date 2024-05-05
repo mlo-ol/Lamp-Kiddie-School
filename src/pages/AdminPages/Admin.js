@@ -86,7 +86,10 @@ const Admin = () => {
                 <div className="admin-section">
                     <div className="faculty-title">
                         <SectionTitle subTitle="Admin About" title="Manage Faculty Members" />
-                        <button className="add-member-btn" onClick={handleAddFaculty}>Add</button>
+                        <div className="button-container">
+                            <button className="add-member-btn" onClick={handleAddFaculty}>Add</button>
+                            <button className="add-member-btn" >Save</button>
+                        </div>
                     </div>
                     <table>
                         <thead>

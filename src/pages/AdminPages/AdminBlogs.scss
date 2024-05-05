@@ -10,6 +10,26 @@
         margin-bottom: 20px;
     }
 
+    .button-container {
+        display: flex;
+
+        .save-button, .create-button {
+            padding: 10px 20px;
+            width: auto;
+            background-color: $color-blue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        .save-button:hover, .create-button:hover {
+            background-color: #0056b3;
+        }
+    }
+    
     .create-button {
         padding: 10px 20px;
         width: auto;
