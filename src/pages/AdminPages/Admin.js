@@ -1,90 +1,123 @@
 import React, { useState } from 'react';
-import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
 import './Admin.scss';
-import imgOne from '../../assets/servicePage/gallery/1.png';
-import imgTwo from '../../assets/servicePage/gallery/2.png';
-import imgThree from '../../assets/servicePage/gallery/3.png';
-import imgFour from '../../assets/servicePage/gallery/4.png';
-import imgFive from '../../assets/servicePage/gallery/5.png';
-import imgSix from '../../assets/servicePage/gallery/6.png';
+import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const Admin = () => {
-    const [galleryImages, setGalleryImages] = useState([
-        imgOne
+
+    const [aboutDetails, setAboutDetails] = useState({
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        phoneNumber: '123-456-7890',
+        emailAddress: 'info@example.com',
+        address: '123 Main Street, City, Country',
+        facebookLink: 'https://www.facebook.com/example'
+    });
+
+
+    const [facultyMembers, setFacultyMembers] = useState([
+        { id: 1, name: 'Dianne Russell', position: 'Principal', picture: '' },
+        { id: 2, name: 'Esther Howard', position: 'Teacher', picture: '' },
+        { id: 3, name: 'Darrell Steward', position: 'Teacher', picture: '' },
+        { id: 4, name: 'Jenny Wilson', position: 'Teacher', picture: '' }
     ]);
 
-    const handleImageUpload = (e, index) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const updatedImages = [...galleryImages];
-                updatedImages[index] = reader.result;
-                setGalleryImages(updatedImages);
-            };
-            reader.readAsDataURL(file);
-        }
+    const handleChangeAbout = (e) => {
+        const { name, value } = e.target;
+        setAboutDetails(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
-    const deleteImage = (index) => {
-        const updatedImages = [...galleryImages];
-        updatedImages.splice(index, 1);
-        setGalleryImages(updatedImages);
+    const handleChangeFaculty = (id, key, value) => {
+        const updatedFaculty = facultyMembers.map(member => {
+            if (member.id === id) {
+                return { ...member, [key]: value };
+            }
+            return member;
+        });
+        setFacultyMembers(updatedFaculty);
+    };
+
+    const handleAddFaculty = () => {
+        const newId = facultyMembers.length + 1;
+        setFacultyMembers([...facultyMembers, { id: newId, name: '', position: '', picture: '' }]);
+    };
+
+    const handleDeleteFaculty = (id) => {
+        const filteredFaculty = facultyMembers.filter(member => member.id !== id);
+        setFacultyMembers(filteredFaculty);
+    };
+
+    const handleSaveAboutDetails = () => {
+        console.log("About details saved:", aboutDetails);
     };
 
     return (
         <>
             <AdminNavbar />
-            
-            <div className="admin">
-                <div className="admin-header">
-                    <SectionTitle
-                        subTitle="Admin Gallery"
-                        title="Manage Gallery Images"
-                        description="You can add, replace, or delete images from the gallery."
-                    />
-                    <div className="upload-container">
-                        <label htmlFor="file-upload" className="upload-button">Upload Image</label>
-                        <input
-                            id="file-upload"
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => handleImageUpload(e, galleryImages.length)}
-                            style={{ display: 'none' }}
-                        />
+            <div className="admin-container">
+                <div className="admin-section">
+                    <div className="about-details-header">
+                        <SectionTitle subTitle="Admin About" title="Edit About Details" />
+                        <button className="save-btn" onClick={handleSaveAboutDetails}>Save</button>
+                    </div>
+                    <div className="about-details-container">
+                        <form>
+                            <div className="about-form">
+                                <div className="about-column">
+                                    <label htmlFor="phoneNumber">Phone Number:</label>
+                                    <input type="text" id="phoneNumber" name="phoneNumber" value={aboutDetails.phoneNumber} onChange={handleChangeAbout} />
+                                    <label htmlFor="emailAddress">Email Address:</label>
+                                    <input type="text" id="emailAddress" name="emailAddress" value={aboutDetails.emailAddress} onChange={handleChangeAbout} />
+                                    <label htmlFor="address">Address:</label>
+                                    <input type="text" id="address" name="address" value={aboutDetails.address} onChange={handleChangeAbout} />
+                                    <label htmlFor="facebookLink">Facebook Link:</label>
+                                    <input type="text" id="facebookLink" name="facebookLink" value={aboutDetails.facebookLink} onChange={handleChangeAbout} />
+                                </div>
+                                <div className="about-column">
+                                    <label htmlFor="description">Description:</label>
+                                    <textarea id="description" name="description" value={aboutDetails.description} onChange={handleChangeAbout} rows="5" />
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div className="gallery-container">
-                    {galleryImages.map((image, index) => (
-                        <div key={index} className="gallery-item">
-                            <img src={image} alt={`gallery${index}`} />
-                            <div className="button-container">
-                                <input
-                                    id={`replace-upload-${index}`}
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => handleImageUpload(e, index)}
-                                    style={{ display: 'none' }}
-                                />
-                                <label htmlFor={`replace-upload-${index}`} className="replace-button">Replace</label>
-                                <button onClick={() => deleteImage(index)}>Delete</button>
-                            </div>
-                        </div>
-                    ))}
-                    {/* Placeholder elements for remaining slots */}
-                    {Array.from({ length: 6 - galleryImages.length }).map((_, index) => (
-                        <label key={index} htmlFor={`replace-upload-${index}`} className="gallery-item placeholder">
-                            <span>Add Image</span>
-                            <input
-                                id={`replace-upload-${index}`}
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => handleImageUpload(e, galleryImages.length + index)}
-                                style={{ display: 'none' }}
-                            />
-                        </label>
-                    ))}
+                <div className="admin-section">
+                    <div className="faculty-title">
+                        <SectionTitle subTitle="Admin About" title="Manage Faculty Members" />
+                        <button className="add-member-btn" onClick={handleAddFaculty}>Add</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Picture</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {facultyMembers.map(member => (
+                                <tr key={member.id}>
+                                    <td>{member.id}</td>
+                                    <td>
+                                        <input type="text" value={member.name} onChange={(e) => handleChangeFaculty(member.id, 'name', e.target.value)} />
+                                    </td>
+                                    <td>
+                                        <input type="text" value={member.position} onChange={(e) => handleChangeFaculty(member.id, 'position', e.target.value)} />
+                                    </td>
+                                    <td>
+                                        <input type="file" accept="image/*" onChange={(e) => handleChangeFaculty(member.id, 'picture', e.target.files[0])} />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => handleDeleteFaculty(member.id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>
