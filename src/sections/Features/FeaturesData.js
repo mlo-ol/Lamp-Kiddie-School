@@ -19,11 +19,11 @@ const featuresData = [
         'title': 'Full-service dentistry',
         'description': 'Our clinic offer a full  of dental service, from exams to implants and veneers.'
     },
-    {
-        'icon': iconFour,
-        'title': 'No judgment ever',
-        'description': 'From floss bosses to sweet tooths, every mouth is welcome.'
-    }
+    // {
+    //     'icon': iconFour,
+    //     'title': 'No judgment ever',
+    //     'description': 'From floss bosses to sweet tooths, every mouth is welcome.'
+    // }
 ]
 
 export default featuresData;

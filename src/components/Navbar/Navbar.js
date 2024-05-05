@@ -19,18 +19,18 @@ const Navbar = () => {
             name: 'Testimonials',
             path: '/testimonials',
         },
-        {
-            name: 'Gallery',
-            path: '/gallery',
-        },
+        // {
+        //     name: 'Gallery',
+        //     path: '/gallery',
+        // },
         {
             name: 'Blogs',
             path: '/blogs',
-        },
-        {
-            name: 'Donations',
-            path: '/donations',
         }
+        // {
+        //     name: 'Donations',
+        //     path: '/donations',
+        // }
     ];
 
     return (
