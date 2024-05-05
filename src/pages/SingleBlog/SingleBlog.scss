@@ -5,9 +5,9 @@
 }
 
 .single-blog-area {
-    background: $color-white;
-    padding: 50px 25px;
-    border-radius: 12px;
+    // background: $color-white;
+    // padding: 50px 25px;
+    // border-radius: 12px;
 
     .single-blog-category {
         font-size: 12px;
@@ -22,8 +22,13 @@
     }
 
     .single-blog-banner {
-        margin-bottom: 30px;
-        width: 50%;
+        margin-bottom: 50px;
+        object-fit: cover;
+        max-width: 100%;
+        height: 800px;
+        background-size: cover;
+        background-position: center;
+        align-items: center;
     }
 
     .single-blog-text {
