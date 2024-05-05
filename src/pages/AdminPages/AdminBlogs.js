@@ -9,7 +9,7 @@ const AdminBlogs = () => {
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
     const [editBlogIndex, setEditBlogIndex] = useState(null);
-    const [newBlog, setNewBlog] = useState({ title: '', description: '', image: null });
+    const [newBlog, setNewBlog] = useState({ title: '', description: '', img: null });
 
     const deleteBlog = (index) => {
         const updatedBlogs = [...blogs];
@@ -25,7 +25,7 @@ const AdminBlogs = () => {
         setShowEditForm(true);
         setEditBlogIndex(index);
         const blogToEdit = blogs[index];
-        setNewBlog({ title: blogToEdit.title, description: blogToEdit.description, image: blogToEdit.img });
+        setNewBlog({ title: blogToEdit.title, description: blogToEdit.description, img: blogToEdit.img });
     };
 
     const handleSaveButtonClick = () => {
@@ -39,14 +39,14 @@ const AdminBlogs = () => {
         setShowCreateForm(false);
         setShowEditForm(false);
         setEditBlogIndex(null);
-        setNewBlog({ title: '', description: '', image: null });
+        setNewBlog({ title: '', description: '', img: null });
     };
 
     const handleCancelButtonClick = () => {
         setShowCreateForm(false);
         setShowEditForm(false);
         setEditBlogIndex(null);
-        setNewBlog({ title: '', description: '', image: null }); 
+        setNewBlog({ title: '', description: '', img: null }); 
     };
 
     const handleInputChange = (e) => {
@@ -55,8 +55,8 @@ const AdminBlogs = () => {
     };
 
     const handleImageChange = (e) => {
-        const image = e.target.files[0];
-        setNewBlog({ ...newBlog, image });
+        const file = e.target.files[0];
+        setNewBlog({ ...newBlog, img: URL.createObjectURL(file) });
     };
 
     return (
@@ -76,7 +76,6 @@ const AdminBlogs = () => {
                         <div key={index} className="blog-item">
                             <img src={blog.img} alt={`blog${index}`} />
                             <div className="blog-text">
-                                <span>{blog.category}</span>
                                 <h3>{blog.title}</h3>
                                 <p>{blog.description}</p>
                                 <div className="button-container">

@@ -7,10 +7,14 @@ import Blogs from '../sections/OtherBlogs/Blogs';
 import Expert from '../sections/Expert/Expert';
 // import Features from '../sections/Features/Features';
 import Footer from '../sections/Footer/Footer';
+<<<<<<< HEAD
 // import Services from '../sections/Services/Services';
 // import Testimonial from '../sections/Testimonial/Testimonial';
 import design from '../assets/home/content-2@3x.png';
 import design2 from '../assets/home/content-3@3x.png';
+=======
+
+>>>>>>> ad77da422a680f596b6d883dbdbfc4b4bff94f40
 
 const Home = () => {
     const designStyle = {

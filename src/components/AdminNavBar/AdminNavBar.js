@@ -8,7 +8,7 @@ const AdminNavbar = () => {
 
     const navbarItems = [
         {
-            name: 'Home',
+            name: 'About',
             path: '/admin',
         },
         {
