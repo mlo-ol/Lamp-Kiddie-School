@@ -2,7 +2,7 @@ import React from 'react';
 import './Safety.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import history from '../../assets/about/vision-mission/container2.png';
-import Gallery from '../Gallery copy/Gallery';
+import Gallery from '../AboutGallery/Gallery';
 
 const Safety = () => {
     const historyStyle = {

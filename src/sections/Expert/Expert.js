@@ -12,11 +12,10 @@ const Expert = () => {
                     <div className="col-lg-6 col-md-6">
                         <div className="expert-text">
                             <SectionTitle 
-                                subTitle="EXPERTS IN DENTAL"
-                                title="Top-notch dentistry, from Seattle's top dentists."
-                                description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts"
+                                subTitle="Welcome!"
+                                title="Lamp Kiddie School"
+                                description="A mission, non-profit, non-sectarian early childhood educational institution committed to train and develop children spiritually, mentally, physically and socially for God's glory."
                             />
-
                             <ul>
                                 <li>
                                     <BsFillCheckCircleFill />

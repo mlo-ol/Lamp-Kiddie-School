@@ -1,13 +1,14 @@
 @import '../../sass/colors.scss';
 
 .appointment-section {
+    padding-top: 50px;
 
     .section-title {
         margin-bottom: 30px;
     }
 
    .google-map {
-        height: 600px;
+        height: 720px;
         position: relative;
         margin-bottom: 30px;
 
@@ -93,6 +94,8 @@
 // Mobile Responsive
 @media (max-width: 575px){
     .appointment-section {
+        margin-top: 50px;
+        height: 900px;
         .appointment-form-area {
             padding-left: 0;
 
