@@ -12,7 +12,7 @@ const Safety = () => {
         backgroundPosition: 'center',
     };
     return (
-        <section className='safty-section pt-80 pb-100' style={historyStyle}> {/* section-bg section-common */}
+        <section className='safty-section pb-100' style={historyStyle}> {/* section-bg section-common */}
             <div className="container" data-aos="fade-up" data-aos-duration="2000">
                 <Gallery />
                 {/* <div className="safety-video ratio ratio-16x9">

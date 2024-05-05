@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AboutBanner.scss';
-import bannerOne from '../../assets/about/banner/banner_1.png'
-import bannerTwo from '../../assets/about/banner/banner_2.png'
-import container1 from '../../assets/about/vision-mission/container1.png'
+import bannerOne from '../../assets/lks/3.jpg';
+import bannerTwo from '../../assets/lks/4.jpg';
+import bannerThree from '../../assets/lks/5.jpg';
+import bannerFour from '../../assets/lks/6.jpg';
+import container1 from '../../assets/about/vision-mission/container1.png';
 // import pattern from '../../assets/banner/pattern.png'
 
 const AboutBanner = () => {
@@ -43,8 +45,8 @@ const AboutBanner = () => {
                         <div className="row align-items-center">
                             <div className="col-lg-7">
                                 <div className="about-banner-img">
-                                    <img src={bannerOne} alt="about banner" />
-                                    <img src={bannerTwo} alt="about banner two" />
+                                    <img src={bannerThree} alt="about banner" />
+                                    <img src={bannerFour} alt="about banner two" />
                                     {/* <img className='pattern' src={pattern} alt="about banner two" /> */}
                                 </div>
                             </div>

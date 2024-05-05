@@ -2,13 +2,38 @@
     .container {
         margin-top: 50px;
     }
+
     .section-title {
         text-align: center;
         margin: 0 auto 40px;
         max-width: 700px;
     }
 
-    .gallery-img {
+    .gallery-img1, .gallery-img2, .gallery-img3,
+    .gallery-img4, .gallery-img5, .gallery-img6 {
         margin-bottom: 20px;
+        border-radius: 30px;
+        max-width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+    .gallery-img1 {
+        background-image: url('~/src/assets/lks/7.jpg');
+    }
+    .gallery-img2 {
+        background-image: url('~/src/assets/lks/8.jpg');
+    }
+    .gallery-img3 {
+        background-image: url('~/src/assets/lks/9.jpg');
+    }
+    .gallery-img4 {
+        background-image: url('~/src/assets/lks/10.jpg');
+    }
+    .gallery-img5 {
+        background-image: url('~/src/assets/lks/11.jpg');
+    }
+    .gallery-img6 {
+        background-image: url('~/src/assets/lks/12.jpg');
     }
 }
