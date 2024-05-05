@@ -69,7 +69,10 @@ const AdminBlogs = () => {
                         title="Manage Blogs"
                         description="You can edit, delete, or create new blogs."
                     />
-                    <button className="create-button" onClick={handleCreateButtonClick}>Create New Blog</button>
+                    <div className="button-container">
+                        <button className="save-button">Save Changes</button>
+                        <button className="create-button" onClick={handleCreateButtonClick}>Create New Blog</button>
+                    </div>
                 </div>
                 <div className="blogs-container">
                     {blogs.map((blog, index) => (

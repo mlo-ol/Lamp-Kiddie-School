@@ -24,7 +24,7 @@
         .save-btn {
             padding: 10px 20px;
             width: auto;
-            background-color: #007bff;
+            background-color: $color-blue;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -74,15 +74,20 @@
             margin-bottom: 20px;
         }
 
-        button.add-member-btn {
-            padding: 10px 20px;
-            width: auto;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        
+        .button-container {
+            display: flex;
+            button.add-member-btn {
+                padding: 10px 20px;
+                width: auto;
+                background-color: $color-blue;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                margin-left: 10px;
+            }
         }
 
         button.add-member-btn:hover {

@@ -33,6 +33,10 @@ const AdminGallery = () => {
         setGalleryImages(updatedImages);
     };
 
+    const handleSaveChanges = () => {
+        // Handle saving changes here
+    };
+
     return (
         <>
             <AdminNavbar />
@@ -44,15 +48,18 @@ const AdminGallery = () => {
                         title="Manage Gallery Images"
                         description="You can add, replace, or delete images from the gallery."
                     />
-                    <div className="upload-container">
-                        <label htmlFor="file-upload" className="upload-button">Upload Image</label>
-                        <input
-                            id="file-upload"
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => handleImageUpload(e, galleryImages.length)}
-                            style={{ display: 'none' }}
-                        />
+                    <div className="button-container">
+                        <button className="upload-button" onClick={handleSaveChanges}>Save Changes</button>
+                        <div className="upload-container">
+                            <label htmlFor="file-upload" className="upload-button">Upload Image</label>
+                            <input
+                                id="file-upload"
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, galleryImages.length)}
+                                style={{ display: 'none' }}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="gallery-container">
