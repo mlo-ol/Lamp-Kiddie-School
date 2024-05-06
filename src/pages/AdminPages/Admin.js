@@ -22,8 +22,6 @@ const Admin = () => {
 
        getInfo();
        fetchFaculty();
-
-        console.log(aboutDetails._id);
     }, []);
 
 
