@@ -1,14 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import Appointment from '../sections/Appointment/Appointment';
+import Donation from '../sections/Donation/Donation';
 import Banner from '../sections/Banner/Banner';
 import Blogs from '../sections/OtherBlogs/Blogs';
-// import Emergency from '../sections/Emergency/Emergency';
-import Expert from '../sections/Expert/Expert';
-// import Features from '../sections/Features/Features';
+import Description from '../sections/Description/Descriptions';
 import Footer from '../sections/Footer/Footer';
-// import Services from '../sections/Services/Services';
-// import Testimonial from '../sections/Testimonial/Testimonial';
 import design from '../assets/home/content-2@3x.png';
 import design2 from '../assets/home/content-3@3x.png';
 
@@ -28,20 +24,16 @@ const Home = () => {
 
     return (
         <>
-            <Navbar/>
-            <Banner/>
-            {/* <Services/> */}
-            {/* <Emergency/> */}
+            <Navbar />
+            <Banner />
             <div style={designStyle}>
-            <Expert/>          
-            {/* <Features /> */}
-            <Blogs/>
-            </div>  
-            {/* <Testimonial/> */}
-            <div div style={design2Style}>
-            <Appointment/>
+                <Description />
+                <Blogs />
             </div>
-            <Footer/>
+            <div div style={design2Style}>
+                <Donation />
+            </div>
+            <Footer />
         </>
     );
 };

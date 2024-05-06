@@ -1,5 +1,5 @@
 import React from 'react';
-import './ContactForm.scss';
+import './TestimonialForm.scss';
 import icon from '../../assets/banner/icons/Calling.png';
 
 const ContactForm = () => {

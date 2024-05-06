@@ -1,6 +1,11 @@
 .blog-section {
+    .container {
+        margin-top: 50px;
+    }
     .section-title {
         text-align: center;
+        margin: 0 auto 40px;
+        max-width: 700px;
 
         h2 {
             max-width: inherit;

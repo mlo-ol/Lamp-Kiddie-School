@@ -1,19 +1,19 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import AboutBanner from '../sections/AboutBanner/AboutBanner';
-import Priority from '../sections/Priority/Priority';
-import Safety from '../sections/Safety/Safety';
-import Team from '../sections/Team/Team';
+import VisionMission from '../sections/Vision-Mission/VM';
+import History from '../sections/History/History';
+import Faculty from '../sections/Faculty/Faculty';
 import Footer from '../sections/Footer/Footer';
 
 const About = () => {
     return (
         <>
             <Navbar />
-            <Priority />
             <AboutBanner />
-            <Safety />
-            <Team />
+            <VisionMission />
+            <History />
+            <Faculty />
             <Footer />
         </>
     );

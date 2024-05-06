@@ -11,12 +11,12 @@ const Blogs = () => {
             <div className="container">
                 <SectionTitle
                     subTitle="Blogs"
-                    title="Stay updated with our latest news"
+                    title="Stay updated with our latest news!"
+                    description='Step into our virtual campus hub, where learning meets expression! Every click sparks curiosity and every read fuels inspiration.'
                 />
-
                 <div className="row">
                     {
-                        BlogData.map (blog => <BlogCard blog={blog} />)
+                        BlogData.map(blog => <BlogCard blog={blog} />)
                     }
                 </div>
             </div>

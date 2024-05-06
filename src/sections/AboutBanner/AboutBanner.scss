@@ -1,151 +1,125 @@
-.about-section {
-    margin-top: 0px;
-    height: 1250px;
-    
-    .about-banner-text {
-        background-image: url("~/src/assets/about/vision-mission/vision-mission.png");
-        background-size: cover;
-        background-position: top;
-        background-repeat: no-repeat;
-        padding: 10%;
-        max-width: 100%;
-        height: 260px;
-        
-        h2 {
-            margin-top: -1%;
-            font-size: 50px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+@import '../../sass/colors.scss';
 
-        p {
-            // font-size: 30px;
-            margin-bottom: 45px;
-        }
-    }
+.priority-section {
+    background-image: url("~/src/assets/lks/2.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
+    margin-top: 150px;
 
+    .priority-text {
+        background-color: white;
+        max-width: 630px;
+        height: 230px;
+        margin-top: 370px;
+        margin-bottom: 30px;
+        border-radius: 30px;
 
-    .about-banner-img {
-        text-align: center;
-        position: relative;
-        
-        img {
-            margin: 0 10px;
-            border-radius: 30px;
-            width: 280px;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            object-fit: cover;
+        .section-title {
+            padding-top: 30px;
+            padding-left: 35px;
+            margin-bottom: 30px;
+            padding-right: 15px;
 
-            &:nth-child(2) {
-                margin-top: 120px;
-                border-radius: 30px;
+            h2 {
+                max-width: inherit;
             }
         }
 
-        .pattern {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            bottom: 0;
-            z-index: -1;
+        .theme-btn {
+            margin-top: 80px;
         }
     }
 }
 
+
 // Mobile Responsive
 @media (max-width: 575px) {
-    .about-section {
-        text-align: center;
-        height: 100%;
-        padding-top: 70px;
+    .priority-section {
+        padding-bottom: 20px;
 
-        .about-banner-text {
-            margin-bottom: 20px;
+        .priority-img {
+            margin-right: 0;
 
-            h2 {
-                font-size: 40px;
-                margin-bottom: 15px;
-            }
-
-            p {
-                margin-bottom: 25px;
+            &::before {
+                display: none;
             }
         }
 
-        .about-banner-img {
-            img {
-                &:nth-child(2) {
-                    margin-top: 10px;
-                }
+        .priority-text {
+            .theme-btn {
+                margin-top: 20px;
             }
         }
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    .about-section {
-        text-align: center;
-        height: 100%;
-        padding-top: 70px;
+    .priority-section {
+        padding-bottom: 70px;
 
-        .about-banner-text {
-            margin-bottom: 20px;
+        .priority-img {
+            margin-right: 0;
+            text-align: center;
 
-            h2 {
-                font-size: 40px;
-                margin-bottom: 15px;
-            }
-
-            p {
-                margin-bottom: 25px;
+            &::before {
+                display: none;
             }
         }
 
-        .about-banner-img {
-            img {
-                max-width: 170px;
-                &:nth-child(2) {
-                    margin-top: 10px;
-                }
+        .priority-text {
+            .theme-btn {
+                margin-top: 0;
             }
         }
     }
 }
 
-// Medium Responsive
+
+// Medium Device Responsive
 @media (min-width: 768px) and (max-width: 991px) {
-    .about-section {
-        text-align: center;
-        height: 100%;
-        padding: 100px 0;
+    .priority-section {
+        padding-bottom: 70px;
 
-        .about-banner-text {
-            h2 {
-                font-size: 40px;
-                margin-bottom: 10px;
+        .priority-img {
+            margin-right: 0;
+            text-align: center;
+
+            &::before {
+                display: none;
             }
+        }
 
-            p {
-                font-size: 16px;
-                margin-bottom: 20px;
+        .priority-text {
+            .theme-btn {
+                margin-top: 0;
             }
         }
     }
 }
 
-// Large Responsive
-@media (min-width: 992px) and (max-width: 1199px) {
-    .about-section {
-        height: 100%;
-        padding: 100px 0;
+// Medium Device Responsive 
+@media (min-width: 991px) and (max-width: 1199px) {
+    .priority-section {
+        padding-bottom: 70px;
+        padding-top: 0px;
 
-        .about-banner-img {
-            img {
-                max-width: 180px;
+        .priority-img {
+            &::before {
+                display: none;
             }
         }
     }
 }
+
+// Large Device Responsive
+@media (min-width: 1200px) and (max-width: 1800px) {
+    .priority-section {
+        .priority-img {
+            &::before {
+                display: none;
+            }
+        }
+    }
+} 

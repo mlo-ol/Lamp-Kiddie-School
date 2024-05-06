@@ -1,7 +1,7 @@
 import React from 'react';
 import './SingleBlog.scss';
 import Navbar from '../../components/Navbar/Navbar';
-import { Link, useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import BlogData from '../../sections/Blogs/BlogData';
 import Footer from '../../sections/Footer/Footer';
 

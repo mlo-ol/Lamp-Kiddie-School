@@ -1,5 +1,5 @@
 import React from 'react';
-import './Team.scss';
+import './Faculty.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import imgOne from '../../assets/lks/Faculty/Director Gloria F. Gaa (2).png';
 import imgTwo from '../../assets/lks/Faculty/Principal Delia F. Fajutagana (2).png';

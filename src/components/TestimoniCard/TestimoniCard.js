@@ -9,7 +9,6 @@ const TestimoniCard = ({testimonail}) => {
         <div className='col-lg-4 single-testimoni'>
             <div className="testimonial-card">
                 <div className="testimonial-img">
-                    {/* <img src={img} alt="testimonial" /> */}
                 </div>
                 <div className="testimonial-text">
                     <h3>{name}</h3>

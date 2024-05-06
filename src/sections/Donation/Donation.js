@@ -1,12 +1,11 @@
 import React from 'react';
-import './Appointment.scss';
+import './Donation.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import {AiFillHome} from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import ContactForm from '../../components/DonateForm/ContactForm';
 
 const Appointment = () => {
 
-    // this should be the location of lamp kiddie school
     const mapLink = 'https://www.google.com/maps/embed/v1/place?q=Lamp+Kiddie+School+(Calatrava,+Pob.),+M+Roxas+St,+Poblacion,+Calatrava,+Romblon,+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
 
     return (
@@ -25,10 +24,10 @@ const Appointment = () => {
                     </div>
                     <div className="col-lg-7 col-md-6">
                         <div className="appointment-form-area">
-                            <SectionTitle 
-                            subTitle="Donation"
-                            title="Gift of Hope: A Call to Donate"
-                            description="“Every man shall give as he is able, according to the blessing of the LORD your God that he has given you.” ~Deuteronomy 16:17, ESV"/>
+                            <SectionTitle
+                                subTitle="Donation"
+                                title="Gift of Hope: A Call to Donate"
+                                description="“Every man shall give as he is able, according to the blessing of the LORD your God that he has given you.” ~Deuteronomy 16:17, ESV" />
 
                             <ContactForm />
                         </div>

@@ -1,9 +1,6 @@
 import React from 'react';
 import './Testimonial.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import imgOne from '../../assets/testimonial/1.png';
-import imgTwo from '../../assets/testimonial/2.png';
-import imgThree from '../../assets/testimonial/3.png';
 import TestimoniCard from '../../components/TestimoniCard/TestimoniCard';
 import { AiFillStar } from "react-icons/ai";
 import Slider from "react-slick";

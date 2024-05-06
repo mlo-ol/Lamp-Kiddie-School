@@ -1,9 +1,6 @@
 import React from 'react';
 import './Testimonial.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import imgOne from '../../assets/testimonial/1.png';
-import imgTwo from '../../assets/testimonial/2.png';
-import imgThree from '../../assets/testimonial/3.png';
 import TestimoniCard from '../../components/TestimoniCard/TestimoniCard';
 import { AiFillStar } from "react-icons/ai";
 import Slider from "react-slick";
@@ -12,43 +9,36 @@ const Testimonial = () => {
 
     const testimonails = [
         {
-            // 'img': imgOne,
             'name': 'Robert Fox',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgTwo,
             'name': 'Albert Flores',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgThree,
             'name': 'Bessie Cooper',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgOne,
             'name': 'Kuromi',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgOne,
             'name': 'Cinnamoroll',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgTwo,
             'name': 'Hello Kitty',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
         },
         {
-            // 'img': imgThree,
             'name': 'Keroppi',
             'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
             'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]

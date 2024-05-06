@@ -1,5 +1,5 @@
 import React from 'react';
-import './Expert.scss';
+import './Descriptions.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import expertImg from '../../assets/lks/19.jpg';

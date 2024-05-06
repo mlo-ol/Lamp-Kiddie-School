@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/footer_logo.png';
 import './Footer.scss';
-import { FaFacebookF, FaInstagram, FaTwitter} from "react-icons/fa";
+import { FaFacebookF} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import call from '../../assets/footer/calling.png';
 import time from '../../assets/footer/time.png';
@@ -22,18 +22,14 @@ const Footer = () => {
             name: 'Testimonials',
             path: '/testimonials',
         },
-        // {
-        //     name: 'Gallery',
-        //     path: '/gallery',
-        // },
+        {
+            name: 'Gallery',
+            path: '/gallery',
+        },
         {
             name: 'Blogs',
             path: '/blogs',
-        },
-        // {
-        //     name: 'Donations',
-        //     path: '/donations',
-        // }
+        }
     ];
 
     const footerContacts = [
@@ -67,9 +63,7 @@ const Footer = () => {
                         <div className="social-logo">
                             <p>Follow us on</p>
                             <ul>
-                                <li><a href="/https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF/></a></li>
-                                <li><a href="/"><FaTwitter/></a></li>
-                                <li><a href="/"><FaInstagram/></a></li>
+                                <li><a href="/https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -89,15 +83,15 @@ const Footer = () => {
 
                             {
                                 footerContacts.map(footerContact => {
-                                    return  <div className="contact-list">
-                                                <div className="contact-icon">
-                                                    <img src={footerContact.icon} alt="call" />
-                                                </div>
-                                                <div className="contact-text">
-                                                    <p>{footerContact.title}</p>
-                                                    <h5>{footerContact.info}</h5>
-                                                </div>
-                                            </div>
+                                    return <div className="contact-list">
+                                        <div className="contact-icon">
+                                            <img src={footerContact.icon} alt="call" />
+                                        </div>
+                                        <div className="contact-text">
+                                            <p>{footerContact.title}</p>
+                                            <h5>{footerContact.info}</h5>
+                                        </div>
+                                    </div>
                                 })
                             }
                         </div>
