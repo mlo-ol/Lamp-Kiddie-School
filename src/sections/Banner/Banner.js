@@ -9,7 +9,7 @@ import shapeFour from '../../assets/banner/pattern.png';
 const Banner = () => {
 
     return (
-        <section className='banner-section'>
+        <section className='banner-section' data-aos="fade-up" data-aos-duration="2000">
             <div className="d-table">
                 <div className="d-table-cell">
                     <div className="container">
