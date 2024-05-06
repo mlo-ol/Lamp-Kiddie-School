@@ -14,6 +14,12 @@ const AdminGallery = () => {
     const [galleryImages, setGalleryImages] = useState([]);
 
     useEffect(() => {
+
+        const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+            if (!token) {
+                window.location.href = '/'; // Redirect to login page if token is not found
+            }
+    
         fetchPhotoLinks();
     }, []);
 
@@ -21,7 +27,7 @@ const AdminGallery = () => {
     const fetchPhotoLinks = async () => {
         try {
             const response = await axios.get('https://lks-server.onrender.com/get/photo');
-            const links = response.data.photoLinks; // Assuming the response has a field 'photoLinks' containing the array of image links
+            const links = response.data; // Assuming the response has a field 'photoLinks' containing the array of image links
             setGalleryImages(links || []); // Set to an empty array if links is undefined
         } catch (error) {
             console.error('Error fetching photo links:', error);
@@ -101,26 +107,27 @@ const AdminGallery = () => {
                     </div>
                 </div>
                 <div className="gallery-container section-bg section-common">
-                    {galleryImages && galleryImages.length > 0 ? (
-                        galleryImages.map((image, index) => (
-                            <div key={index} className="gallery-item">
-                                <img src={image} alt={`gallery${index}`} />
-                                <div className="button-container">
-                                    <input
-                                        id={`replace-upload-${index}`}
-                                        type="file"
-                                        accept="image/*"
-                                        onChange={(e) => handleImageUpload(e, index)}
-                                        style={{ display: 'none' }}
-                                    />
-                                    <label htmlFor={`replace-upload-${index}`} className="replace-button">Replace</label>
-                                    <button onClick={() => deleteImage(index)}>Delete</button>
-                                </div>
+                {galleryImages && galleryImages.length > 0 ? (
+                    galleryImages.map((image, index) => (
+                        <div key={image._id} className="gallery-item">
+                            <img src={image.link} alt={`gallery${index}`} />
+                            <div className="button-container">
+                                <input
+                                    id={`replace-upload-${index}`}
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(e) => handleImageUpload(e, index)}
+                                    style={{ display: 'none' }}
+                                />
+                                <label htmlFor={`replace-upload-${index}`} className="replace-button">Replace</label>
+                                <button onClick={() => deleteImage(index)}>Delete</button>
                             </div>
-                        ))
-                    ) : (
-                        <p>No images to display</p>
+                        </div>
+                            ))
+                        ) : (
+                            <p>No images to display</p>
                     )}
+
                     {/* Placeholder elements for remaining slots */}
                     {Array.from({ length: 6 - (galleryImages ? galleryImages.length : 0) }).map((_, index) => (
                         <label key={index} htmlFor={`replace-upload-${index}`} className="gallery-item placeholder">
