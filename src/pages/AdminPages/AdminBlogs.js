@@ -67,7 +67,7 @@ const AdminBlogs = () => {
                     <SectionTitle
                         subTitle="Admin Blogs"
                         title="Manage Blogs"
-                        description="You can edit, delete, or create new blogs."
+                        description="EDIT, DELETE, or CREATE new blogs."
                     />
                     <div className="button-container">
                         <button className="save-button">Save Changes</button>

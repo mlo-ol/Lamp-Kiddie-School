@@ -1,9 +1,11 @@
 @import './../../sass/colors.scss';
 .admin-container {
-    padding: 20vh;
+    padding: 15vh;
 
     .admin-section {
         margin-bottom: 40px;
+        width: 100%;
+        padding: 70px;
 
         .about-details-container {
             border: 1px solid #ccc;
@@ -33,7 +35,7 @@
         }
 
         .save-btn:hover {
-            background-color: #0056b3;
+            background-color: #71b2f7;
         }
 
         form {
@@ -91,7 +93,7 @@
         }
 
         button.add-member-btn:hover {
-            background-color: #0056b3;
+            background-color: #71b2f7;
         }
 
         table {

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Team.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import imgOne from '../../assets/lks/Faculty/Director Gloria F. Gaa.png';
-import imgTwo from '../../assets/lks/Faculty/Teacher Delia F. Fajutagana.png';
+import imgOne from '../../assets/lks/Faculty/Director Gloria F. Gaa (2).png';
+import imgTwo from '../../assets/lks/Faculty/Principal Delia F. Fajutagana (2).png';
 import imgThree from '../../assets/lks/Faculty/Teacher Geraldine M. De la Cruz.png';
 import imgFour from '../../assets/lks/Faculty/Teacher Judy Ann M. Mariano.png';
 import imgFive from '../../assets/lks/Faculty/Teacher Maricel M. Falcutila.png';
@@ -18,7 +18,7 @@ const Team = () => {
         },
         {
             'img': imgTwo,
-            'name': 'Teacher Delia F. Fajutagana'
+            'name': 'Principal Delia F. Fajutagana'
         },
         {
             'img': imgThree,
@@ -26,7 +26,7 @@ const Team = () => {
         },
         {
             'img': imgFour,
-            'name': 'Teacher Judy Ann M. Mariano.png'
+            'name': 'Teacher Judy Ann M. Mariano'
         },
         {
             'img': imgFive,
@@ -53,12 +53,12 @@ const Team = () => {
                         <SectionTitle 
                             subTitle="Meet the Teachers"
                             title="Get to know the Lamp 
-                            Kiddie School Faculty"
+                            Kiddie School Faculty!"
                         />
                     </div>
 
                     <div className="col-lg-5">
-                        <p className='pt-5'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                        <p className='pt-5'>Step into the magical world of learning! Welcome to the land of bright minds and shining futures, where our faculty members aren't just teachers – they're illuminators of knowledge! 🌟</p>
                     </div>
                 </div>
 

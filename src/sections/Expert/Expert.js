@@ -14,20 +14,20 @@ const Expert = () => {
                             <SectionTitle 
                                 subTitle="Welcome!"
                                 title="Lamp Kiddie School"
-                                description="A mission, non-profit, non-sectarian early childhood educational institution committed to train and develop children spiritually, mentally, physically and socially for God's glory."
+                                description="A mission, non-profit, non-sectarian early childhood educational institution committed to train and develop children spiritually, mentally, physically and socially for God’s glory."
                             />
                             <ul>
                                 <li>
                                     <BsFillCheckCircleFill />
-                                    Top quality dental team
+                                    Academic Excellence
                                 </li>
                                 <li>
                                     <BsFillCheckCircleFill />
-                                    State of the art dental services
+                                    Foundational Christian Values
                                 </li>
                                 <li>
                                     <BsFillCheckCircleFill />
-                                    Discount on all dental treatment
+                                    Curriculum based on the Institute for Foundational Learning
                                 </li>
                             </ul>
                         </div>

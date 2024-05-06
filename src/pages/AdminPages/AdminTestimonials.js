@@ -35,9 +35,9 @@ const AdminTestimonials = () => {
                 <SectionTitle
                     subTitle="Admin Testimonials"
                     title="Manage Testimonials"
-                    description="You can approve or remove testimonials."
+                    description="APPROVE or REMOVE Testimonials."
                 />
-                <div className="testimonials-table">
+                <div className="testimonials-table section-bg section-common">
                     <h2>Pending Testimonials</h2>
                     <table>
                         <thead>
@@ -69,7 +69,7 @@ const AdminTestimonials = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="testimonials-table">
+                <div className="testimonials-table section-bg section-common">
                     <h2>Approved Testimonials</h2>
                     <table>
                         <thead>

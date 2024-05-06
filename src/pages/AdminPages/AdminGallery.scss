@@ -2,12 +2,13 @@
 
 .admin {
     padding: 20vh;
+    // margin: 8.5%;
 
     .admin-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: -40px;
     }
 
     .upload-container {
@@ -27,7 +28,7 @@
     }
 
     .upload-button:hover {
-        background-color: #0056b3;
+        background-color: #71b2f7;
     }
 
     #file-upload {
@@ -38,6 +39,9 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
+        padding: 5%;
+        margin-left: -3vh;
+        margin-right: -3vh;
     }
 
     .gallery-item {

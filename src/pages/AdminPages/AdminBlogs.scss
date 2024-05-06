@@ -7,7 +7,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: -40px;
     }
 
     .button-container {
@@ -26,7 +26,7 @@
         }
 
         .save-button:hover, .create-button:hover {
-            background-color: #0056b3;
+            background-color: #71b2f7;
         }
     }
     
@@ -42,7 +42,7 @@
     }
 
     .create-button:hover {
-        background-color: #0056b3;
+        background-color: #71b2f7;
     }
 
     .blogs-container {
@@ -66,7 +66,7 @@
 
         .blog-text {
             padding: 15px;
-            background-color: #fff;
+            background-color: #FFFDD6;
             border-radius: 5px;
             flex-grow: 1;
             display: flex;
@@ -98,7 +98,8 @@
         }
 
         .edit-button, .delete-button {
-            padding: 5px 10px;
+            padding: 10px 10px;
+            margin: 8px;
             background-color: #cc4545;
             color: #fff;
             border: none;
@@ -155,7 +156,7 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #71b2f7;
         }
     }
 }

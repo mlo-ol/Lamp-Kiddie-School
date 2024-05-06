@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
 import './AdminGallery.scss';
-import imgOne from '../../assets/servicePage/gallery/1.png';
-import imgTwo from '../../assets/servicePage/gallery/2.png';
-import imgThree from '../../assets/servicePage/gallery/3.png';
-import imgFour from '../../assets/servicePage/gallery/4.png';
-import imgFive from '../../assets/servicePage/gallery/5.png';
-import imgSix from '../../assets/servicePage/gallery/6.png';
+import imgOne from '../../assets/lks/13.jpg';
+import imgTwo from '../../assets/lks/14.jpg';
+import imgThree from '../../assets/lks/15.jpg';
+import imgFour from '../../assets/lks/16.jpg';
+import imgFive from '../../assets/lks/17.jpg';
+import imgSix from '../../assets/lks/18.jpg';
 
 const AdminGallery = () => {
     const [galleryImages, setGalleryImages] = useState([
@@ -46,7 +46,7 @@ const AdminGallery = () => {
                     <SectionTitle
                         subTitle="Admin Gallery"
                         title="Manage Gallery Images"
-                        description="You can add, replace, or delete images from the gallery."
+                        description="ADD, REPLACE, and DELETE images from the gallery."
                     />
                     <div className="button-container">
                         <button className="upload-button" onClick={handleSaveChanges}>Save Changes</button>
@@ -62,7 +62,7 @@ const AdminGallery = () => {
                         </div>
                     </div>
                 </div>
-                <div className="gallery-container">
+                <div className="gallery-container section-bg section-common">
                     {galleryImages.map((image, index) => (
                         <div key={index} className="gallery-item">
                             <img src={image} alt={`gallery${index}`} />

@@ -18,8 +18,8 @@ const Priority = () => {
                         <div className="priority-text" data-aos="fade-up" data-aos-duration="2000">
                             <SectionTitle 
                                 subTitle="ABOUT US" 
-                                title="Get to know the LKS"
-                                description="Includes the Vision and Mission, History, and Faculty."
+                                title="Get to know the Lamp Kiddie School!"
+                                // description="Includes the Vision and Mission, History, and Faculty."
                             />
 
                             {/* <div className="theme-btn">

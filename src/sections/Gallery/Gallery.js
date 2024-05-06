@@ -14,8 +14,9 @@ const Gallery = () => {
             <div className="container">
                 <SectionTitle 
                     subTitle="Gallery"
-                    title="Capturing Moments & Inspiring Minds of Lamp Kiddie School"
-                    description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+                    title="Capturing Moments of Lamp Kiddie School"
+                    description='"And I commend joy, for man has nothing better under the sun but to eat and drink and be joyful, for this will go with him in his toil through the days of his life that God has given him under the sun."
+                    ~Ecclesiastes 8:15'
                 />
                 <div className="row">
                     <div className="col-md-5 col-sm-6">

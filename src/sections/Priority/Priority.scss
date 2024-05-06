@@ -31,14 +31,16 @@
     .priority-text {
         background-color: white;
         max-width: 630px;
-        height: 210px;
+        height: 230px;
         margin-top: 370px;
         margin-bottom: 30px;
+        border-radius: 30px;
 
         .section-title {
             padding-top: 30px;
             padding-left: 35px;
             margin-bottom: 30px;
+            padding-right: 15px;
 
             h2 {
                 max-width: inherit;

@@ -57,7 +57,7 @@ const Admin = () => {
         <>
             <AdminNavbar />
             <div className="admin-container">
-                <div className="admin-section">
+                <div className="admin-section section-bg section-common">
                     <div className="about-details-header">
                         <SectionTitle subTitle="Admin About" title="Edit About Details" />
                         <button className="save-btn" onClick={handleSaveAboutDetails}>Save</button>
@@ -83,7 +83,7 @@ const Admin = () => {
                         </form>
                     </div>
                 </div>
-                <div className="admin-section">
+                <div className="admin-section section-bg section-common">
                     <div className="faculty-title">
                         <SectionTitle subTitle="Admin About" title="Manage Faculty Members" />
                         <div className="button-container">
