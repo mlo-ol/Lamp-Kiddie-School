@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
 import './Login.scss';
+import axios from 'axios';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    
+    const handleLogin = async () => {
+        try{
+            const res = await axios.post('https://lks-server.onrender.com/login', {
+                username,
+                password,
+            });
 
-    const handleLogin = () => {
-        if (username === 'admin' && password === '1') {
-            // Successful login logic, redirect to the about page
-            window.location.href = '/admin';
-        } else {
-            setErrorMessage('Invalid username or password');
+            if (res.data.success) {
+                window.location.href = '/admin';  // Successful login logic, redirect to the about page
+            } else {
+                setErrorMessage(res.data.message);
+            }
+
+        }catch (error) {
+            console.error(error);
+            setErrorMessage('An error occurred during login');
         }
+
     };
 
     return (
