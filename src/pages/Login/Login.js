@@ -15,7 +15,8 @@ const Login = () => {
             });
 
             if (res.data.success) {
-                window.location.href = '/admin';  // Successful login logic, redirect to the about page
+                document.cookie = `token=${res.data.token}; path=/;`; // Save the token to the cookies
+                window.location.href = '/admin';  // Successful login, redirect to the admin page
             } else {
                 setErrorMessage(res.data.message);
             }

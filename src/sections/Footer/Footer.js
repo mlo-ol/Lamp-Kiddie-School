@@ -14,13 +14,12 @@ const Footer = () => {
 
     useEffect(() => {
         getInfo(); 
-        console.log(aboutInfo.email);
     }, []);
 
     const getInfo = async () => {
         try {
             const res = await axios.get('https://lks-server.onrender.com/getAbout');
-
+                //currently does not work cuz render spools down the backend if no usage
             setAboutInfo(res.data.About[0]);
             
         } catch(error) {

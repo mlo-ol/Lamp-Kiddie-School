@@ -25,6 +25,15 @@ const AdminNavbar = () => {
         }
     ];
 
+    const handleLogout = async () => {
+
+                // Clear the cookie by setting its expiration date to a past time
+                document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+                // Redirect to the home page after successful logout
+                window.location.href = '/'; 
+    }
+
     return (
         <div className='main-nav'>
             <div className="container">
@@ -50,7 +59,7 @@ const AdminNavbar = () => {
                             </ul>
                             
                             {/* Navbar Button */}
-                            <div className="theme-btn">
+                            <div className="theme-btn" onClick={handleLogout}>
                                 <Link to="/">Logout</Link>
                             </div>
                         </div>
