@@ -27,7 +27,9 @@ const AdminGallery = () => {
     const fetchPhotoLinks = async () => {
         try {
             const response = await axios.get('https://lks-server.onrender.com/get/photo');
+
             const links = response.data; // Assuming the response has a field 'photoLinks' containing the array of image links
+
             setGalleryImages(links || []); // Set to an empty array if links is undefined
         } catch (error) {
             console.error('Error fetching photo links:', error);
@@ -44,7 +46,7 @@ const AdminGallery = () => {
                 imageData.append('file', file);
                 imageData.append('upload_preset', 'marketplace_preset'); // Replace 'your_upload_preset' with your Cloudinary upload preset
 
-                try {
+                try {5
                     const response = await axios.post(
                         'https://api.cloudinary.com/v1_1/ddttcgieo/image/upload',
                         imageData
