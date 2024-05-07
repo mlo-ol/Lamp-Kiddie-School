@@ -82,7 +82,7 @@ const Footer = () => {
                         <div className="social-logo">
                             <p>Follow us on</p>
                             <ul>
-                                <li><a href="/https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF /></a></li>
+                                <li><a href="https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF /></a></li>
                             </ul>
                         </div>
                     </div>
