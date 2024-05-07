@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './AdminTestimonials.scss';
 import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
+import axios from 'axios';
 
 const AdminTestimonials = () => {
     const [pendingTestimonials, setPendingTestimonials] = useState([
@@ -9,6 +10,19 @@ const AdminTestimonials = () => {
         { id: 2, name: 'Jane Smith', type: 'Parent', email: 'jane@example.com', contact: '9876543210', message: 'Nulla facilisi. Vivamus lacinia arcu vitae ex rutrum, vel accumsan ligula elementum.', approved: false },
         { id: 3, name: 'Alice Johnson', type: 'Alumni', email: 'alice@example.com', contact: '5678901234', message: 'Fusce pharetra, urna nec fringilla lobortis, magna arcu efficitur magna, id facilisis mauris magna eu risus.', approved: false },
     ]);
+
+    useEffect(() => {
+        fetchTestimonialsParents();
+    }, [])
+
+    const fetchTestimonialsParents = async () => {
+        try {
+            const res = await axios.get('https://lks-server.onrender.com/getTestimonialsAdmin/Parent/Pending', { withCredentials:true })
+            console.log(res.data.testimonials);
+        }catch(error){
+            console.error(error);
+        }
+    }
 
     const [approvedTestimonials, setApprovedTestimonials] = useState([]);
 

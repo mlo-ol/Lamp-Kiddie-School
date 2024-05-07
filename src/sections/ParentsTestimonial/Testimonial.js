@@ -1,49 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Testimonial.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import TestimoniCard from '../../components/TestimoniCard/TestimoniCard';
 import { AiFillStar } from "react-icons/ai";
 import Slider from "react-slick";
+import axios from 'axios';
 
 const Testimonial = () => {
+    const [ testimonail, setTestimonails ] = useState([]);
 
-    const testimonails = [
-        {
-            'name': 'Robert Fox',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Albert Flores',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Bessie Cooper',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Kuromi',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Cinnamoroll',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Hello Kitty',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-        {
-            'name': 'Keroppi',
-            'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
-            'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-        },
-    ]
+    useEffect(() => {
+        fetchApprovedTestimonials();
+    }, [])
+
+    const fetchApprovedTestimonials = async () => {
+        const res = await axios.get('https://lks-server.onrender.com/getApprovedTestimonials/Parent');
+    
+        const testimonials = res.data.testimonials.map(testimonial => ({
+            name: testimonial.name,
+            description: testimonial.text,
+        })); // Create array of testimonial objects
+    
+        setTestimonails(testimonials);
+    };
+
+    // const testimonails = [
+    //     {
+    //         'name': 'Robert Fox',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Albert Flores',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Bessie Cooper',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Kuromi',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Cinnamoroll',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Hello Kitty',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    //     {
+    //         'name': 'Keroppi',
+    //         'description' : 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts',
+    //         'ratings':[<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    //     },
+    // ]
 
     // slider
     const settings = {
@@ -94,7 +111,7 @@ const Testimonial = () => {
 
                 <Slider {...settings} className="testimoni-slider">
                     {
-                        testimonails.map(testimonail => <TestimoniCard testimonail={testimonail} />)
+                        testimonail.map(testimonail => <TestimoniCard testimonail={testimonail} />)
                     }
                 </Slider>
                
