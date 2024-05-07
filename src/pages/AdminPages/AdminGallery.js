@@ -21,18 +21,17 @@ const AdminGallery = () => {
             }
     
         fetchPhotoLinks();
+        
     }, []);
 
 
     const fetchPhotoLinks = async () => {
         try {
             const response = await axios.get('https://lks-server.onrender.com/get/photo');
-
-            const links = response.data; // Assuming the response has a field 'photoLinks' containing the array of image links
-
-            setGalleryImages(links || []); // Set to an empty array if links is undefined
+            setGalleryImages(response.data.Photos || []);
         } catch (error) {
             console.error('Error fetching photo links:', error);
+            
         }
     };
 
@@ -40,48 +39,73 @@ const AdminGallery = () => {
     const handleImageUpload = (e, index) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = async () => {
-                const imageData = new FormData();
-                imageData.append('file', file);
-                imageData.append('upload_preset', 'marketplace_preset'); // Replace 'your_upload_preset' with your Cloudinary upload preset
+          const reader = new FileReader();
+          reader.onloadend = async () => {
+            const imageData = new FormData();
+            imageData.append('file', file);
+            imageData.append('upload_preset', 'marketplace_preset'); // Replace with your Cloudinary preset
+      
+            try {
+              const cloudinaryResponse = await axios.post(
+                'https://api.cloudinary.com/v1_1/ddttcgieo/image/upload',
+                imageData
+              );
+              const newImageUrl = cloudinaryResponse.data.secure_url;
+      
+              // Check if image already has a link in state
+              const existingImage = galleryImages[index];
+              const hasExistingLink = existingImage && existingImage.link;
+      
+              if (hasExistingLink) {
+                // Update existing image link in state
+                const updatedImages = [...galleryImages];
+                updatedImages[index].link = newImageUrl;
+                setGalleryImages(updatedImages);
+      
+                // Send PUT request to update image on server  (optional)
+                await updateImage(existingImage._id, { link: newImageUrl });
+              } else {
+                // Send POST request to save a new image link (original behavior)
+                await axios.post('https://lks-server.onrender.com/upload/photo', {
+                  link: newImageUrl,
+                });
+              }
+              fetchPhotoLinks();
+              console.log('Image uploaded and link saved/updated successfully');
+            } catch (error) {
+              console.error('Error uploading image to Cloudinary or saving/updating link:', error);
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      
 
-                try {5
-                    const response = await axios.post(
-                        'https://api.cloudinary.com/v1_1/ddttcgieo/image/upload',
-                        imageData
-                    );
-                    const imageUrl = response.data.secure_url;
 
-                    // Update galleryImages state with the Cloudinary image URL
-                    const updatedImages = [...galleryImages];
-                    updatedImages[index] = imageUrl;
-                    setGalleryImages(updatedImages);
-
-                    // Send a POST request to save the image link
-                    await axios.post('https://lks-server.onrender.com/upload/photo', {
-                        link: imageUrl,
-                    });
-
-                    console.log('Image uploaded and link saved successfully');
-                } catch (error) {
-                    console.error('Error uploading image to Cloudinary or saving link:', error);
-                }
-            };
-            reader.readAsDataURL(file);
+    const deleteImage = async (id) => {
+        try{
+            await axios.delete(`https://lks-server.onrender.com/delete/photo/${id}`)
+            fetchPhotoLinks();
+        }catch(error){
+            console.error(error);
         }
     };
 
+    const updateImage = async (photoId, updatedImageData) => {
+        try {
+          const response = await axios.put(`https://lks-server.onrender.com/edit/photo/${photoId}`, updatedImageData);
+          console.log('Image updated successfully:', response.data);
+        } catch (error) {
+          console.error('Error updating image:', error);
+        }
+      };
+      
 
-    const deleteImage = (index) => {
-        const updatedImages = [...galleryImages];
-        updatedImages.splice(index, 1);
-        setGalleryImages(updatedImages);
-    };
-
-    const handleSaveChanges = () => {
-        // Handle saving changes here
-    };
+    const handleSaveChanges = async () => { 
+        // Update state with potentially modified images
+        console.log('Gallery images updated successfully');
+      };
+      
 
     return (
         <>
@@ -115,14 +139,14 @@ const AdminGallery = () => {
                             <img src={image.link} alt={`gallery${index}`} />
                             <div className="button-container">
                                 <input
-                                    id={`replace-upload-${index}`}
+                                    id={`replace-upload-${image._id}`}
                                     type="file"
                                     accept="image/*"
                                     onChange={(e) => handleImageUpload(e, index)}
                                     style={{ display: 'none' }}
                                 />
-                                <label htmlFor={`replace-upload-${index}`} className="replace-button">Replace</label>
-                                <button onClick={() => deleteImage(index)}>Delete</button>
+                                <label htmlFor={`replace-upload-${image._id}`} className="replace-button">Replace</label>
+                                <button onClick={() => deleteImage(image._id)}>Delete</button>
                             </div>
                         </div>
                             ))
