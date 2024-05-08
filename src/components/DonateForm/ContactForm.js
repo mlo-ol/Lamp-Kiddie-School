@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ContactForm.scss';
 import icon from '../../assets/banner/icons/Calling.png';
 import axios from 'axios';
 
 const ContactForm = () => {
-
+    const [aboutInfo, setAboutInfo] = useState(null);
     const [formData , setFormData] = useState({
         name: '',
         donationType: 'Money', // default value
@@ -37,6 +37,24 @@ const ContactForm = () => {
             console.error('Error sending email:', error);
         }
     };
+
+
+    const getInfo = async () => {
+        try {
+            const res = await axios.get('https://lks-server.onrender.com/getAbout');
+
+            setAboutInfo(res.data.About);
+            
+        } catch(error) {
+            console.error(error);
+        }
+    }
+
+    
+    useEffect(() => {
+        getInfo(); 
+    }, []);
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -80,17 +98,19 @@ const ContactForm = () => {
                 <div className="col-lg-6">
                     <button type="submit" class="btn appointment-btn">Submit</button>
                 </div>
-                <div className="col-lg-6">
-                    <div className="appointment-call">
-                        <div className='icon'>
-                            <img src={icon} alt="icon" />
-                        </div>
-                        <div className='call-text'>
-                            <p>Lamp Kiddie School</p>
-                            <h6>+63 9123456789</h6>
+                {aboutInfo && (
+                    <div className="col-lg-6">
+                        <div className="appointment-call">
+                            <div className="icon">
+                                <img src={icon} alt="icon" />
+                            </div>
+                            <div className="call-text">
+                                <p>Lamp Kiddie School</p>
+                                <h6>+63 {aboutInfo.phoneNumber.replace(/^0+/, '')}</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </form>
     );

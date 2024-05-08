@@ -54,7 +54,7 @@ const Footer = () => {
     const footerContacts = aboutInfo ? [
         {
             'title': 'Phone Number',
-            'info': `${aboutInfo.phoneNumber}`,
+            'info': `+63 ${aboutInfo.phoneNumber.replace(/^0+/, '')}`,
             'icon': call
         },
         {
