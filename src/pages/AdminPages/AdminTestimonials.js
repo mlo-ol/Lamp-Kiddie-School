@@ -5,26 +5,59 @@ import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
 import axios from 'axios';
 
 const AdminTestimonials = () => {
-    const [pendingTestimonials, setPendingTestimonials] = useState([
-        { id: 1, name: 'John Doe', type: 'Alumni', email: 'john@example.com', contact: '1234567890', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', approved: false },
-        { id: 2, name: 'Jane Smith', type: 'Parent', email: 'jane@example.com', contact: '9876543210', message: 'Nulla facilisi. Vivamus lacinia arcu vitae ex rutrum, vel accumsan ligula elementum.', approved: false },
-        { id: 3, name: 'Alice Johnson', type: 'Alumni', email: 'alice@example.com', contact: '5678901234', message: 'Fusce pharetra, urna nec fringilla lobortis, magna arcu efficitur magna, id facilisis mauris magna eu risus.', approved: false },
-    ]);
+    const [pendingTestimonials, setPendingTestimonials] = useState([]);
+    const [approvedTestimonials, setApprovedTestimonials] = useState([]);
 
     useEffect(() => {
-        fetchTestimonialsParents();
+        fetchPendingTestimonials();
+        fetchApprovedTestimonials();
     }, [])
 
-    const fetchTestimonialsParents = async () => {
+    const fetchPendingTestimonials = async () => {
         try {
-            const res = await axios.get('https://lks-server.onrender.com/getTestimonialsAdmin/Parent/Pending', { withCredentials:true })
+            const res = await axios.get('https://lks-server.onrender.com/getPendingTestimonials')
             console.log(res.data.testimonials);
+            
+
+            const testimonials = res.data.testimonials.map(testimonial => ({
+                name: testimonial.name,
+                applicantType: testimonial.applicantType,
+                email: testimonial.email,
+                contact: testimonial.contactNumber,
+                message: testimonial.text,
+            })); // Create array of testimonial objects
+
+
+            setPendingTestimonials(testimonials)
+
         }catch(error){
             console.error(error);
         }
     }
 
-    const [approvedTestimonials, setApprovedTestimonials] = useState([]);
+    const fetchApprovedTestimonials = async () => {
+        try {
+            const res = await axios.get('https://lks-server.onrender.com/getApprovedTestimonials')
+            console.log(res.data.testimonials);
+            
+
+            const approved = res.data.testimonials.map(testimonial => ({
+                name: testimonial.name,
+                applicantType: testimonial.applicantType,
+                email: testimonial.email,
+                contact: testimonial.contactNumber,
+                message: testimonial.text,
+            })); // Create array of testimonial objects
+ 
+
+            setApprovedTestimonials(approved)
+
+        }catch(error){
+            console.error(error);
+        }
+    }
+
+    
 
     const handleApprove = (id) => {
         const selectedTestimonial = pendingTestimonials.find(testimonial => testimonial.id === id);
@@ -70,7 +103,7 @@ const AdminTestimonials = () => {
                                 <tr key={testimonial.id}>
                                     <td>{testimonial.id}</td>
                                     <td>{testimonial.name}</td>
-                                    <td>{testimonial.type}</td>
+                                    <td>{testimonial.applicantType}</td>
                                     <td>{testimonial.email}</td>
                                     <td>{testimonial.contact}</td>
                                     <td>{testimonial.message}</td>
@@ -102,7 +135,7 @@ const AdminTestimonials = () => {
                                 <tr key={testimonial.id}>
                                     <td>{testimonial.id}</td>
                                     <td>{testimonial.name}</td>
-                                    <td>{testimonial.type}</td>
+                                    <td>{testimonial.applicantType}</td>
                                     <td>{testimonial.email}</td>
                                     <td>{testimonial.contact}</td>
                                     <td>{testimonial.message}</td>
