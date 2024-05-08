@@ -19,8 +19,8 @@ const Footer = () => {
     const getInfo = async () => {
         try {
             const res = await axios.get('https://lks-server.onrender.com/getAbout');
-                //currently does not work cuz render spools down the backend if no usage
-            setAboutInfo(res.data.About[0]);
+
+            setAboutInfo(res.data.About);
             
         } catch(error) {
             console.error(error);
@@ -51,23 +51,23 @@ const Footer = () => {
         }
     ];
 
-    const footerContacts = [
+    const footerContacts = aboutInfo ? [
         {
             'title': 'Phone Number',
-            'info': '09300432427',
+            'info': `${aboutInfo.phoneNumber}`,
             'icon': call
         },
         {
             'title': 'For interest in donating:',
-            'info': 'sample@email.com',
+            'info': `${aboutInfo.email}`,
             'icon': time
         },
         {
             'title': 'Address',
-            'info': 'Calatrava, Romblon, Philippines',
+            'info': `${aboutInfo.address}`,
             'icon': location
         }
-    ]
+    ] : [];
 
     return (
         <footer className='pt-100 pb-70'>
@@ -77,12 +77,13 @@ const Footer = () => {
                         <div className="footer-logo">
                             <img src={logo} alt="logo" />
                         </div>
-                        <p>A mission, non-profit, non-sectarian early childhood educational institution committed to train and develop children spiritually, mentally, physically and socially for God's glory.</p>
+                        {aboutInfo && <p>{aboutInfo.schoolDescription}</p>}
+                        
 
                         <div className="social-logo">
                             <p>Follow us on</p>
                             <ul>
-                                <li><a href="https://web.facebook.com/groups/653752085377264/?_rdc=1&_rdr"><FaFacebookF /></a></li>
+                                <li><a href= {aboutInfo && aboutInfo.facebook}><FaFacebookF /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,7 +92,7 @@ const Footer = () => {
                             <p>Quick Links</p>
                             <ul>
                                 {
-                                    footerMenu.map(singleMenu => <li><Link to="/">{singleMenu.name}</Link></li>)
+                                    footerMenu.map(singleMenu => <li><Link to={singleMenu.path}>{singleMenu.name}</Link></li>)
                                 }
                             </ul>
                         </div>

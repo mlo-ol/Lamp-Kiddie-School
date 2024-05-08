@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './AdminTestimonials.scss';
 import AdminNavbar from '../../components/AdminNavBar/AdminNavBar';
@@ -8,72 +8,80 @@ const AdminTestimonials = () => {
     const [pendingTestimonials, setPendingTestimonials] = useState([]);
     const [approvedTestimonials, setApprovedTestimonials] = useState([]);
 
-    useEffect(() => {
-        fetchPendingTestimonials();
-        fetchApprovedTestimonials();
-    }, [])
 
-    const fetchPendingTestimonials = async () => {
+
+    const fetchPendingTestimonials = useCallback(async () => {
         try {
             const res = await axios.get('https://lks-server.onrender.com/getPendingTestimonials')
-            console.log(res.data.testimonials);
-            
 
-            const testimonials = res.data.testimonials.map(testimonial => ({
+            const pending = res.data.testimonials.map(testimonial => ({
+                id: testimonial._id,
                 name: testimonial.name,
                 applicantType: testimonial.applicantType,
                 email: testimonial.email,
                 contact: testimonial.contactNumber,
                 message: testimonial.text,
-            })); // Create array of testimonial objects
+            })); 
 
+            setPendingTestimonials(pending)
 
-            setPendingTestimonials(testimonials)
-
-        }catch(error){
+        } catch(error){
             console.error(error);
         }
-    }
+    }, []);
 
-    const fetchApprovedTestimonials = async () => {
+    const fetchApprovedTestimonials = useCallback(async () => {
         try {
             const res = await axios.get('https://lks-server.onrender.com/getApprovedTestimonials')
-            console.log(res.data.testimonials);
             
-
             const approved = res.data.testimonials.map(testimonial => ({
+                id: testimonial._id,
                 name: testimonial.name,
                 applicantType: testimonial.applicantType,
                 email: testimonial.email,
                 contact: testimonial.contactNumber,
                 message: testimonial.text,
-            })); // Create array of testimonial objects
- 
+            }));
 
             setApprovedTestimonials(approved)
 
-        }catch(error){
+        } catch(error){
             console.error(error);
         }
-    }
-
+    }, []);
     
 
-    const handleApprove = (id) => {
-        const selectedTestimonial = pendingTestimonials.find(testimonial => testimonial.id === id);
-        setApprovedTestimonials([...approvedTestimonials, selectedTestimonial]);
-        setPendingTestimonials(pendingTestimonials.filter(testimonial => testimonial.id !== id));
+    const handleApprove = async (id) => {
+        try {
+            const res = await axios.put(`https://lks-server.onrender.com/updateTestimonialStatus/${id}/Approved`)
+            console.log(res);
+            refreshTestimonials();
+        } catch (error) {
+            console.error(error);
+        }
     };
 
-    const handleRemovePending = (id) => {
-        const filteredTestimonials = pendingTestimonials.filter(testimonial => testimonial.id !== id);
-        setPendingTestimonials(filteredTestimonials);
+    const handleRemove = async (id) => {
+        try {
+            const res = await axios.put(`https://lks-server.onrender.com/updateTestimonialStatus/${id}/Removed`)
+            console.log(res);
+            refreshTestimonials();
+        } catch (error) {
+            console.error(error);
+        }
     };
 
-    const handleRemoveApproved = (id) => {
-        const filteredTestimonials = approvedTestimonials.filter(testimonial => testimonial.id !== id);
-        setApprovedTestimonials(filteredTestimonials);
-    };
+    const refreshTestimonials = useCallback(async () => {
+        await fetchPendingTestimonials();
+        await fetchApprovedTestimonials();
+    }, [fetchPendingTestimonials, fetchApprovedTestimonials]);
+
+
+    useEffect(() => {
+        refreshTestimonials();
+    }, [refreshTestimonials])
+
+
 
     return (
         <>
@@ -101,7 +109,7 @@ const AdminTestimonials = () => {
                         <tbody>
                             {pendingTestimonials.map(testimonial => (
                                 <tr key={testimonial.id}>
-                                    <td>{testimonial.id}</td>
+                                    <td>{testimonial._id}</td>
                                     <td>{testimonial.name}</td>
                                     <td>{testimonial.applicantType}</td>
                                     <td>{testimonial.email}</td>
@@ -109,7 +117,7 @@ const AdminTestimonials = () => {
                                     <td>{testimonial.message}</td>
                                     <td>
                                         <button className="approve-button" onClick={() => handleApprove(testimonial.id)}>Approve</button>
-                                        <button className="remove-button" onClick={() => handleRemovePending(testimonial.id)}>Remove</button>
+                                        <button className="remove-button" onClick={() => handleRemove(testimonial.id)}>Remove</button>
                                     </td>
                                 </tr>
                             ))}
@@ -133,14 +141,14 @@ const AdminTestimonials = () => {
                         <tbody>
                             {approvedTestimonials.map(testimonial => (
                                 <tr key={testimonial.id}>
-                                    <td>{testimonial.id}</td>
+                                    <td>{testimonial._id}</td>
                                     <td>{testimonial.name}</td>
                                     <td>{testimonial.applicantType}</td>
                                     <td>{testimonial.email}</td>
                                     <td>{testimonial.contact}</td>
                                     <td>{testimonial.message}</td>
                                     <td>
-                                        <button className="remove-button" onClick={() => handleRemoveApproved(testimonial.id)}>Remove</button>
+                                        <button className="remove-button" onClick={() => handleRemove(testimonial.id)}>Remove</button>
                                     </td>
                                 </tr>
                             ))}

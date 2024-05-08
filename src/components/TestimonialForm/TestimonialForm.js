@@ -6,7 +6,7 @@ import axios from 'axios';
 const ContactForm = () => {
 
     const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
     try {
         const name = e.target.name.value;
@@ -26,7 +26,7 @@ const ContactForm = () => {
         const response = await axios.post('https://lks-server.onrender.com/uploadTestimonial', testimonialData);
         if (response.status === 201) { 
         console.log('Testimonial submitted successfully!');
-    
+        e.target.reset();
         } else {
         console.error('Error submitting testimonial:', response.data);
         }
