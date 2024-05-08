@@ -70,7 +70,7 @@ const Admin = () => {
 
     const handleChangeFaculty = (id, key, value) => {
         const updatedFaculty = facultyMembers.map(member => {
-            if (member.id === id) {
+            if (member._id === id) {
                 return { ...member, [key]: value };
             }
             return member;
@@ -104,14 +104,27 @@ const Admin = () => {
 
     }
 
-    const handleAddFaculty = () => {
-        const newId = facultyMembers.length + 1;
-        setFacultyMembers([...facultyMembers, { id: newId, name: '', position: '', picture: '' }]);
+    const handleAddFaculty = async () => {
+
+        await axios.post('https://lks-server.onrender.com/upload/faculty', {
+            name: ' ',
+            title: ' ',
+            image: ' ',
+        });
+
+        fetchFaculty();
     };
 
-    const handleDeleteFaculty = (id) => {
-        const filteredFaculty = facultyMembers.filter(member => member.id !== id);
-        setFacultyMembers(filteredFaculty);
+    const handleDeleteFaculty = async (id) => {
+        try {
+            const res = await axios.delete(`https://lks-server.onrender.com/delete/faculty/${id}`)
+            
+            await fetchFaculty();
+            console.log(res.data);
+
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const handleSaveAboutDetails = async () => {
@@ -147,14 +160,12 @@ const Admin = () => {
                 await axios.put(`https://lks-server.onrender.com/edit/faculty/${member._id}`, {
                     name: member.name,
                     title: member.title,
-                    image: member.image,
                 });
             });
 
             await Promise.all(saveRequests);
 
-            // Optionally, you can fetch updated data after saving
-            // Example: fetchFacultyMembers();
+            fetchFaculty();
 
             console.log('Faculty members saved successfully');
         } catch (error) {
@@ -220,13 +231,13 @@ const Admin = () => {
                                         <input type="text" value={member.name} onChange={(e) => handleChangeFaculty(member._id, 'name', e.target.value)} />
                                     </td>
                                     <td>
-                                        <input type="text" value={member.title} onChange={(e) => handleChangeFaculty(member._id, 'position', e.target.value)} />
+                                        <input type="text" value={member.title} onChange={(e) => handleChangeFaculty(member._id, 'title', e.target.value)} />
                                     </td>
                                     <td>
                                         <input type="file" accept="image/*" onChange={(e) => handleFileChange(member._id, e.target.files[0])} />
                                     </td>
                                     <td>
-                                        <button onClick={() => handleDeleteFaculty(member.id)}>Delete</button>
+                                        <button onClick={() => handleDeleteFaculty(member._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}
