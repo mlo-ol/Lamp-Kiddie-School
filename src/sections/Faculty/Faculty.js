@@ -21,7 +21,6 @@ const Team = () => {
         try {
             const res = await axios.get('https://lks-server.onrender.com/get/faculty');
             const data = res.data.allFaculty;
-            console.log(data);
             setTeams(data);
         } catch (error) {
             console.error(error);
@@ -29,7 +28,7 @@ const Team = () => {
     };
 
     const teamsStyle = {
-        backgroundImage: `url(${team})`, // Use multiple backgrounds
+        backgroundImage: `url(${team})`, 
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
         backgroundPosition: 'center',
