@@ -78,6 +78,13 @@ const AdminTestimonials = () => {
 
 
     useEffect(() => {
+        
+        const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+        if (!token) {
+            window.location.href = '/'; // Redirect to login page if token is not found
+        }
+
+
         refreshTestimonials();
     }, [refreshTestimonials])
 
