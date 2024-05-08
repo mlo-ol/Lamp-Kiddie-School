@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Faculty.scss';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import imgOne from '../../assets/lks/Faculty/Director Gloria F. Gaa (2).png';
@@ -8,35 +8,25 @@ import imgFour from '../../assets/lks/Faculty/Teacher Judy Ann M. Mariano.png';
 import imgFive from '../../assets/lks/Faculty/Teacher Maricel M. Falcutila.png';
 import imgSix from '../../assets/lks/Faculty/Teacher Ria Ann M. Falsado.png';
 import team from '../../assets/about/vision-mission/container3.png';
+import axios from 'axios';
 
 const Team = () => {
+    const [teams, setTeams] = useState([]);
 
-    const teams = [
-        {
-            'img': imgOne,
-            'name': 'Director Gloria F. Gaa'
-        },
-        {
-            'img': imgTwo,
-            'name': 'Principal Delia F. Fajutagana'
-        },
-        {
-            'img': imgThree,
-            'name': 'Teacher Geraldine M. De la Cruz'
-        },
-        {
-            'img': imgFour,
-            'name': 'Teacher Judy Ann M. Mariano'
-        },
-        {
-            'img': imgFive,
-            'name': 'Teacher Maricel M. Falcutila'
-        },
-        {
-            'img': imgSix,
-            'name': 'Teacher Ria Ann M. Falsado'
+    useEffect(() => {
+        fetchFaculty();
+    }, []);
+
+    const fetchFaculty = async () => {
+        try {
+            const res = await axios.get('https://lks-server.onrender.com/get/faculty');
+            const data = res.data.allFaculty;
+            console.log(data);
+            setTeams(data);
+        } catch (error) {
+            console.error(error);
         }
-    ]
+    };
 
     const teamsStyle = {
         backgroundImage: `url(${team})`, // Use multiple backgrounds
@@ -68,7 +58,7 @@ const Team = () => {
                             <div className="col-lg-3 col-sm-6">
                                 <div className="team-card">
                                     <div className="team-img">
-                                        <img src={team.img} alt="" />
+                                        <img src={team.image} alt="" />
                                     </div>
                                     <h3>{team.name}</h3>
                                 </div>
